@@ -1,0 +1,90 @@
+Repository Link
+https://github.com/pjrejojp1-6969/web-tech-project
+
+What your teammates should do:
+
+1. Fork the repository
+- Open the repository link above
+- Click the Fork button in the top-right corner
+- This creates their own copy of the project
+
+2. Clone their fork locally
+```bash
+git clone https://github.com/THEIR-USERNAME/web-tech-project.git
+cd web-tech-project
+```
+
+3. Create a branch
+```bash
+git checkout -b add-my-projects
+```
+
+4. Create their project folder structure
+Each teammate should create a folder under team/ using their name, then add 4 project folders inside it.
+
+Example structure:
+```text
+team/
+└── member-2/
+    ├── project-1/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── project-2/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    ├── project-3/
+    │   ├── index.html
+    │   ├── style.css
+    │   └── script.js
+    └── project-4/
+        ├── index.html
+        ├── style.css
+        └── script.js
+```
+
+5. Add their project files
+Each project folder must contain:
+- index.html
+- style.css
+- script.js
+
+6. Commit and push to their fork
+```bash
+git add .
+git commit -m "Add [their name]'s 4 UI projects"
+git push origin add-my-projects
+```
+
+7. Open a Pull Request
+- Go to GitHub
+- Click Compare & pull request
+- Base repository: pjrejojp1-6969/web-tech-project
+- Base branch: main
+- Head repository: THEIR-USERNAME/web-tech-project
+- Compare branch: add-my-projects
+- Submit the PR
+
+8. Wait for review and merge
+Once merged, their projects appear on the live gallery automatically.
+
+Live site:
+https://pjrejojp1-6969.github.io/web-tech-project/
+
+Important notes:
+- They must not push directly to main
+- All work goes through a pull request
+- Each project can be completely different
+- The project folder names can be anything descriptive like:
+  - landing-page
+  - portfolio-site
+  - dashboard-ui
+  - ecommerce-home
+
+Current first member setup:
+- rejo
+  - chennai_stays
+  - cloud_cut
+  - pixel_muse
+  - stream_box
