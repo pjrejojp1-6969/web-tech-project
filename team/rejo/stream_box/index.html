@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>stream_box</title>
-    <style>
-      body { font-family: Arial, sans-serif; margin: 40px; background: #0b1220; color: #edf4ff; }
-      .card { max-width: 700px; margin: 0 auto; background: #111c2d; border: 1px solid #2a3e5e; border-radius: 18px; padding: 28px; }
-      h1 { margin-top: 0; }
-      p { color: #b6c8e0; }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>stream_box</h1>
-      <p>This is a placeholder project page for rejo's stream_box project.</p>
-      <p>Replace this with your actual UI design.</p>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StreamBox</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav id="nav">
+  <a class="logo" href="#/">STREAMBOX</a>
+  <div class="links" id="links"></div>
+  <div class="sp"></div>
+  <input id="q" placeholder="Search titles" aria-label="Search">
+  <button class="ib" id="sb" aria-label="Search">🔍</button>
+  <button class="ib" id="bell" aria-label="Notifications">🔔</button>
+  <div class="dd">
+    <button class="ib" id="pb" aria-label="Profile">👤 ▾</button>
+    <div class="menu" id="pm">
+      <a href="#/account">Account</a><a href="#/mylist">My List</a><a href="#/help">Help Center</a><a id="auth"></a>
     </div>
-  </body>
+  </div>
+</nav>
+<main id="app"></main>
+<footer id="foot"></footer>
+
+<div class="modal" id="modal"><div class="mb" id="mb"></div></div>
+<div class="player" id="player">
+  <button class="x" id="px">×</button>
+  <h2 id="pt"></h2><div class="bar"><i id="pbar"></i></div><p id="pst">Playing…</p>
+  <div><button class="btn g" id="pp">Pause</button></div>
+</div>
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
 </html>
