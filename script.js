@@ -1,59 +1,31 @@
 const projectData = [
   {
-    member: "Member 1",
-    title: "Gym Landing Page",
-    type: "Landing Page",
-    path: "team/member-1/gym-landing-page/index.html",
-    description: "High-energy landing page for a fitness brand or gym startup."
-  },
-  {
-    member: "Member 1",
-    title: "Portfolio Showcase",
-    type: "Portfolio",
-    path: "team/member-1/portfolio-showcase/index.html",
-    description: "Personal portfolio design with work cards and a clean profile layout."
-  },
-  {
-    member: "Member 2",
-    title: "SaaS Dashboard",
-    type: "Dashboard",
-    path: "team/member-2/saas-dashboard/index.html",
-    description: "Metrics-first dashboard layout for a software company or analytics panel."
-  },
-  {
-    member: "Member 2",
-    title: "Travel Booking UI",
+    member: "Rejo",
+    title: "Chennai Stays",
     type: "Booking UI",
-    path: "team/member-2/travel-booking-ui/index.html",
-    description: "A modern travel booking interface with destination cards and filters."
+    path: "team/rejo/chennai_stays/index.html",
+    description: "Hotel and stay rental booking platform for Chennai."
   },
   {
-    member: "Member 3",
-    title: "Crypto Dashboard",
-    type: "Dashboard",
-    path: "team/member-3/crypto-dashboard/index.html",
-    description: "Financial dashboard concept featuring chart cards and portfolio stats."
+    member: "Rejo",
+    title: "Cloud Cut",
+    type: "Video Editor",
+    path: "team/rejo/cloud_cut/index.html",
+    description: "Browser-based video editing and timeline editor."
   },
   {
-    member: "Member 3",
-    title: "Restaurant Website",
-    type: "Business Site",
-    path: "team/member-3/restaurant-website/index.html",
-    description: "A restaurant homepage with menu highlights and reservations section."
+    member: "Rejo",
+    title: "Pixel Muse",
+    type: "Design Tool",
+    path: "team/rejo/pixel_muse/index.html",
+    description: "Creative design and pixel art tool."
   },
   {
-    member: "Member 4",
-    title: "E-commerce Home",
-    type: "E-commerce",
-    path: "team/member-4/ecommerce-home/index.html",
-    description: "Shopping homepage concept with promotional banners and product rows."
-  },
-  {
-    member: "Member 4",
-    title: "Clinic Booking Page",
-    type: "Services",
-    path: "team/member-4/clinic-booking-page/index.html",
-    description: "Healthcare appointment page with service cards and booking flow."
+    member: "Rejo",
+    title: "Stream Box",
+    type: "Streaming",
+    path: "team/rejo/stream_box/index.html",
+    description: "Live streaming and video platform."
   }
 ];
 
