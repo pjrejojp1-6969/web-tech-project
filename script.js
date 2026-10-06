@@ -58,7 +58,7 @@ const teamData = [
     ]
   },
   {
-    name: "venkata sai charan",
+    name: "Captain",
     projects: [
       {
         title: "Hotel Booking",
@@ -67,10 +67,10 @@ const teamData = [
         description: "A responsive hotel booking and accommodation interface."
       },
       {
-        title: "Forkfull",
-        type: "Food ordering",
+        title: "Static Page",
+        type: "Landing Page",
         path: "team/captain/static/index.html",
-        description: "Food ordering website."
+        description: "A clean, responsive static website template."
       },
       {
         title: "Travel Explorer",
@@ -80,38 +80,38 @@ const teamData = [
       },
       {
         title: "Crypto Dashboard",
-        type: "Grocery",
+        type: "Finance / Web3",
         path: "team/captain/crypto/index.html",
-        description: "A grocery ordering website."
+        description: "A cryptocurrency tracking and information dashboard."
       }
     ]
   },
   {
-    name: "Arun",
+    name: "Saicharan",
     projects: [
       {
-        title: "Fitness Tracker",
-        type: "Health & Fitness",
-        path: "team/arun/fitness-tracker/index.html",
-        description: "Workout tracking and fitness goal management system."
+        title: "AgentFlow AI",
+        type: "AI Interface",
+        path: "team/Saicharan/AgentFlow-AI-Agent-Command-Center/index.html",
+        description: "An AI agent command center and management interface."
       },
       {
-        title: "Movie Database",
-        type: "Entertainment",
-        path: "team/arun/movie-database/index.html",
-        description: "Movie information and rating platform with search."
+        title: "PulseIQ",
+        type: "Dashboard",
+        path: "team/Saicharan/PulseIQ-Dashboard/index.html",
+        description: "Analytics and data visualization dashboard."
       },
       {
-        title: "Travel Planner",
-        type: "Travel & Tourism",
-        path: "team/arun/travel-planner/index.html",
-        description: "Plan trips with destination guides and itinerary builder."
+        title: "StashBox",
+        type: "Storage",
+        path: "team/Saicharan/StashBox/index.html",
+        description: "Secure file storage and management system."
       },
       {
-        title: "Music Player",
-        type: "Media Player",
-        path: "team/arun/music-player/index.html",
-        description: "Custom web-based music player with playlist management."
+        title: "StockPulse",
+        type: "Finance",
+        path: "team/Saicharan/StockPulse/index.html",
+        description: "Stock market tracking and financial analytics platform."
       }
     ]
   }
