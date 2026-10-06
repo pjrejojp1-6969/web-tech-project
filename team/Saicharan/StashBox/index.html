@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StashBox — File Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ticker"><div class="ticker-track"><span>Drop files anywhere to upload ✦ Drag a file onto a folder to move it ✦ Press / to search ✦ Press N for a new folder ✦ Press G to switch views ✦ </span><span>Drop files anywhere to upload ✦ Drag a file onto a folder to move it ✦ Press / to search ✦ Press N for a new folder ✦ Press G to switch views ✦ </span></div></div>
+<div class="app">
+  <aside class="side">
+    <div class="logo">Stash<span>Box</span></div>
+    <button class="btn pri big" id="uploadBtn">⬆ Upload files</button>
+    <input type="file" id="fileIn" multiple hidden>
+    <nav class="nav" id="nav"></nav>
+    <div class="meter"><b id="usedTxt"></b><div class="bar"><i id="usedBar"></i></div><small id="freeTxt"></small></div>
+  </aside>
+  <main class="main">
+    <header class="top">
+      <input class="field" id="search" type="search" placeholder="Search files ( / )" aria-label="Search files">
+      <select class="field" id="sort" aria-label="Sort files">
+        <option value="name">Sort: Name</option><option value="date">Sort: Newest</option>
+        <option value="size">Sort: Largest</option><option value="type">Sort: Type</option>
+      </select>
+      <button class="btn" id="viewBtn"></button>
+      <button class="btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+      <button class="btn pri" id="newFolder">+ Folder</button>
+    </header>
+    <div class="crumbs" id="crumbs"></div>
+    <div class="titlebar"><h1 id="title"></h1><span id="titleAction"></span></div>
+    <div class="bulk" id="bulk" hidden></div>
+    <div class="items grid" id="items"></div>
+  </main>
+</div>
+<div class="drop" id="dropZone">Drop files to upload</div>
+<div class="modal" id="modal"><div class="box" id="modalBody"></div></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

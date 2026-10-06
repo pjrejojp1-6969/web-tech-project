@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PulseIQ — Analytics Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="app">
+  <aside class="sidebar glass">
+    <div class="brand"><span class="brand-dot"></span>PulseIQ</div>
+    <nav class="nav" id="nav">
+      <button class="nav-item active" data-tab="overview">Overview</button>
+      <button class="nav-item" data-tab="sales">Sales</button>
+      <button class="nav-item" data-tab="customers">Customers</button>
+      <button class="nav-item" data-tab="products">Products</button>
+      <button class="nav-item" data-tab="reports">Reports</button>
+      <button class="nav-item" data-tab="settings">Settings</button>
+    </nav>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <input class="input" id="globalSearch" type="search" placeholder="Search orders, customers…" aria-label="Global search">
+      <select class="input" id="rangeSelect" aria-label="Date range">
+        <option value="7">Last 7 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="90">Last 90 days</option>
+      </select>
+      <button class="btn primary" id="genOverview">Generate report</button>
+    </header>
+
+    <section class="tab active" id="tab-overview">
+      <h1>Overview</h1>
+      <div class="grid kpis" id="kpiGrid"></div>
+      <div class="grid two">
+        <div class="panel glass"><h3>Revenue performance</h3><div id="revChart" class="chart"></div></div>
+        <div class="panel glass"><h3>Order status</h3><div id="statusChart" class="donut-wrap"></div></div>
+      </div>
+      <div class="grid two">
+        <div class="panel glass"><h3>Recent activity</h3><ul class="activity" id="activityList"></ul></div>
+        <div class="panel glass"><h3>Top product</h3><div id="topProduct"></div></div>
+      </div>
+    </section>
+
+    <section class="tab" id="tab-sales">
+      <h1>Sales</h1>
+      <div class="grid kpis three" id="salesStats"></div>
+      <div class="panel glass">
+        <div class="toolbar">
+          <input class="input" id="salesSearch" type="search" placeholder="Search order or customer" aria-label="Search sales">
+          <div class="chips" id="statusFilters">
+            <button class="chip active" data-status="All">All</button>
+            <button class="chip" data-status="Completed">Completed</button>
+            <button class="chip" data-status="Processing">Processing</button>
+            <button class="chip" data-status="Cancelled">Cancelled</button>
+          </div>
+          <button class="btn" id="exportCsv">Export CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table><thead><tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
+          <tbody id="salesBody"></tbody></table>
+        </div>
+        <p class="muted" id="salesCount"></p>
+      </div>
+    </section>
+
+    <section class="tab" id="tab-customers">
+      <h1>Customers</h1>
+      <div class="grid kpis three" id="custStats"></div>
+      <div class="panel glass">
+        <h3>Segments</h3>
+        <div class="chips" id="segmentBtns"></div>
+        <div id="segmentDetail" class="segment-detail"></div>
+      </div>
+    </section>
+
+    <section class="tab" id="tab-products">
+      <h1>Products</h1>
+      <div class="panel glass">
+        <div class="toolbar"><span class="muted">Ranked by</span>
+          <div class="chips" id="productSort">
+            <button class="chip active" data-sort="revenue">Revenue</button>
+            <button class="chip" data-sort="units">Units sold</button>
+            <button class="chip" data-sort="perf">Performance</button>
+          </div></div>
+        <div class="table-wrap"><table><thead><tr><th>#</th><th>Product</th><th>Category</th><th>Units</th><th>Revenue</th><th>Performance</th></tr></thead>
+        <tbody id="productBody"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="tab" id="tab-reports">
+      <h1>Reports</h1>
+      <div class="grid three-col" id="reportCards"></div>
+      <div class="panel glass"><h3>Report history</h3><ul class="history" id="reportHistory"></ul></div>
+    </section>
+
+    <section class="tab" id="tab-settings">
+      <h1>Settings</h1>
+      <div class="panel glass" id="settingsList"></div>
+    </section>
+  </main>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
