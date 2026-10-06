@@ -58,31 +58,25 @@ const teamData = [
     ]
   },
   {
-    name: "Priya",
+    name: "Captain",
     projects: [
       {
-        title: "E-Commerce Hub",
-        type: "Shopping Platform",
-        path: "team/priya/ecommerce-hub/index.html",
-        description: "Modern e-commerce platform with product filtering and cart."
+        title: "Hotel Booking",
+        type: "Hospitality",
+        path: "team/captain/hotel/index.html",
+        description: "A responsive hotel booking and accommodation interface."
       },
       {
-        title: "Recipe Gallery",
-        type: "Food & Recipes",
-        path: "team/priya/recipe-gallery/index.html",
-        description: "Interactive recipe collection with cooking instructions."
+        title: "Static Page",
+        type: "Landing Page",
+        path: "team/captain/static/index.html",
+        description: "A clean, responsive static website template."
       },
       {
-        title: "Weather Dashboard",
-        type: "Weather App",
-        path: "team/priya/weather-dashboard/index.html",
-        description: "Real-time weather information and forecast display."
-      },
-      {
-        title: "Task Manager",
-        type: "Productivity",
-        path: "team/priya/task-manager/index.html",
-        description: "Daily task management and todo list application."
+        title: "Travel Explorer",
+        type: "Travel",
+        path: "team/captain/traveling/index.html",
+        description: "A travel destination and tour booking platform."
       }
     ]
   },
