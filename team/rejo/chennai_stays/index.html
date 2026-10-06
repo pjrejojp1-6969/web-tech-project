@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChennaiStay — Rentals in Chennai</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="#home">ChennaiStay</a>
+  <nav id="mainNav">
+    <a href="#home">Home</a><a href="#stays">Stays</a><a href="#experiences">Experiences</a>
+    <a href="#pricing">Pricing</a><a href="#favorites">Favorites</a><a href="#trips">Trips</a>
+    <a href="#host">Host</a><a href="#help">Help</a><a href="#about">About</a><a href="#login">Login</a>
+  </nav>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="hero-content">
+      <span class="pill">100 verified-style demo listings across Chennai</span>
+      <h1>Find your stay in Chennai.</h1>
+      <p>Explore apartments, villas, studios and homes across 10 popular Chennai locations.</p>
+      <div class="search-box">
+        <label>Where<input id="homeLocation" list="locations" placeholder="Search Chennai location"></label>
+        <label>Guests<input id="homeGuests" type="number" min="1" value="2"></label>
+        <label>Max price<input id="homePrice" type="number" min="0" placeholder="₹ per night"></label>
+        <button class="primary" onclick="runSearch()">Search</button>
+      </div>
+      <datalist id="locations"></datalist>
+    </div>
+  </div>
+  <div class="section-head"><div><h2>Popular stays</h2><p>Hand-picked demo listings to explore the interface.</p></div><button class="outline" onclick="go('stays')">View all 100</button></div>
+  <div id="homeGrid" class="property-grid"></div>
+</section>
+
+<section id="stays" class="page">
+  <div class="section-head"><div><h1>All stays</h1><p>100 rental properties across 10 Chennai locations.</p></div></div>
+  <div class="filters">
+    <input id="searchInput" placeholder="Search by name or location" oninput="renderStays()">
+    <select id="locationFilter" onchange="renderStays()"><option value="">All locations</option></select>
+    <select id="typeFilter" onchange="renderStays()"><option value="">All property types</option></select>
+    <select id="priceFilter" onchange="renderStays()"><option value="">Any price</option><option value="2500">Up to ₹2,500</option><option value="4000">Up to ₹4,000</option><option value="6000">Up to ₹6,000</option></select>
+    <select id="sortFilter" onchange="renderStays()"><option value="recommended">Recommended</option><option value="priceLow">Price: low to high</option><option value="rating">Rating</option></select>
+  </div>
+  <div id="staysGrid" class="property-grid"></div>
+</section>
+
+<section id="property" class="page">
+  <div id="propertyDetail"></div>
+</section>
+
+<section id="pricing" class="page">
+  <div class="center"><h1>Pricing</h1><p>Simple plans for guests and hosts. This is a demo checkout.</p></div>
+  <div class="plans">
+    <article><h2>Guest Free</h2><div class="big">₹0</div><p>Browse all 100 stays</p><p>Save favorites</p><p>Contact demo owners</p><button class="primary" onclick="alert('Guest Free selected!')">Choose plan</button></article>
+    <article class="featured"><h2>ChennaiStay Plus</h2><div class="big">₹499<span>/month</span></div><p>Priority support</p><p>Member-only offers</p><p>Flexible trip tools</p><button class="primary" onclick="alert('Plus plan selected!')">Choose plan</button></article>
+    <article><h2>Host Pro</h2><div class="big">₹999<span>/month</span></div><p>Listing tools</p><p>Booking dashboard</p><p>Host analytics</p><button class="primary" onclick="go('host')">Become a host</button></article>
+  </div>
+</section>
+
+<section id="experiences" class="page">
+  <div class="center"><h1>Chennai Experiences</h1><p>Demo activities that complement your stay.</p></div>
+  <div class="experience-grid">
+    <article><div class="emoji">🌊</div><h2>ECR Sunrise Walk</h2><p>₹799 · 2 hours</p><button class="primary" onclick="bookExperience('ECR Sunrise Walk')">Book</button></article>
+    <article><div class="emoji">🍛</div><h2>Chennai Food Trail</h2><p>₹1,299 · 3 hours</p><button class="primary" onclick="bookExperience('Chennai Food Trail')">Book</button></article>
+    <article><div class="emoji">🏛️</div><h2>Mylapore Heritage Tour</h2><p>₹999 · 2.5 hours</p><button class="primary" onclick="bookExperience('Mylapore Heritage Tour')">Book</button></article>
+    <article><div class="emoji">🎨</div><h2>Chennai Art Evening</h2><p>₹1,099 · 2 hours</p><button class="primary" onclick="bookExperience('Chennai Art Evening')">Book</button></article>
+  </div>
+</section>
+
+<section id="favorites" class="page">
+  <div class="section-head"><div><h1>Favorites</h1><p>Your saved properties are stored in this browser.</p></div></div>
+  <div id="favoritesGrid" class="property-grid"></div>
+</section>
+
+<section id="trips" class="page">
+  <div class="section-head"><div><h1>Your trips</h1><p>Confirmed demo bookings appear here.</p></div></div>
+  <div id="tripsList" class="trips-list"></div>
+</section>
+
+<section id="host" class="page">
+  <div class="host-banner"><h1>Become a ChennaiStay host</h1><p>Share your Chennai property with guests.</p><button class="primary" onclick="showHostForm()">Start hosting</button></div>
+  <div id="hostFormWrap"></div>
+</section>
+
+<section id="help" class="page">
+  <div class="center"><h1>Help Center</h1><p>Common questions and support.</p></div>
+  <div class="faq">
+    <details><summary>How do I book a property?</summary><p>Open any listing, choose your dates and click Reserve. Demo bookings are saved locally.</p></details>
+    <details><summary>Are owner contacts real?</summary><p>No. This project uses fictional demo owner details. Replace them with verified contacts before publishing.</p></details>
+    <details><summary>How do favorites work?</summary><p>Press the heart button on a property card. Favorites are stored in your browser.</p></details>
+    <details><summary>Can I filter by Chennai location?</summary><p>Yes. Use the filters on the Stays page.</p></details>
+  </div>
+</section>
+
+<section id="about" class="page">
+  <div class="about"><h1>About ChennaiStay</h1><p>ChennaiStay is a front-end Airbnb-style demonstration website built for learning and prototyping.</p><div class="stats"><div><b>100</b><span>Demo stays</span></div><div><b>10</b><span>Locations</span></div><div><b>10+</b><span>Pages</span></div></div><button class="primary" onclick="go('stays')">Explore stays</button></div>
+</section>
+
+<section id="login" class="page">
+  <div class="login-card"><h1>Welcome back</h1><p>Demo login — no real account is created.</p><input id="loginEmail" type="email" placeholder="Email"><input id="loginPassword" type="password" placeholder="Password"><button class="primary" onclick="login()">Log in</button><button class="outline" onclick="alert('Demo signup opened!')">Create account</button><p id="loginStatus"></p></div>
+</section>
+</main>
+
+<div id="modal" class="modal" onclick="closeModal(event)"><div class="modal-box" id="modalBox"></div></div>
+<footer><p>© 2026 ChennaiStay · Demo project · Owner contact information is fictional.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
