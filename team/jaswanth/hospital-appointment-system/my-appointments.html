@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Appointments | Modern Hospital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="inner-page">
+<header class="navbar">
+    <div class="logo">Modern Hospital</div>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="doctor.html">Doctors</a>
+        <a href="services.html">Services</a>
+        <a href="appointment.html">Appointment</a>
+        <a href="my-appointments.html" aria-current="page">My Appointments</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<main>
+<section class="section my-appointments">
+    <div class="section-title">
+        <h2>My Appointments</h2>
+        <p>Review appointments you have saved in this browser.</p>
+    </div>
+    <p id="appointment-count" class="appointment-count" aria-live="polite"></p>
+    <div id="appointment-list" class="appointment-list" aria-live="polite">
+        <p>Loading your appointments...</p>
+    </div>
+    <div class="appointment-actions">
+        <a class="learn-btn" href="appointment.html">Book Another Appointment</a>
+    </div>
+</section>
+</main>
+<footer>
+    <p>&#169; 2026 Modern Hospital | All Rights Reserved</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

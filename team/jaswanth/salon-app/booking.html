@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Appointment - Glow Salon</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>✨ Glow Salon</h1>
+        <p>Book Your Appointment</p>
+    </header>
+
+    <section class="booking">
+
+        <h2>Appointment Details</h2>
+
+        <form id="bookingForm">
+
+            <label>Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter phone number" required>
+
+            <label>Select Service</label>
+            <select id="service" required>
+                <option value="">Choose a service</option>
+                <option>Haircut - ₹120</option>
+                <option>Hair Styling - ₹200</option>
+                <option>Facial - ₹250</option>
+                <option>Beard Styling - ₹100</option>
+            </select>
+
+            <label>Select Date</label>
+            <input type="date" id="date" required>
+
+            <label>Select Time</label>
+            <input type="time" id="time" required>
+
+            <button type="submit">Confirm Appointment</button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

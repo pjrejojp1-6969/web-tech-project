@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportZone - Turf & Sports Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+        /* NAVBAR */
+        .navbar {
+            background: #111827;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo span {
+            color: #22c55e;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #22c55e;
+        }
+        .login-btn {
+            background: #22c55e;
+            padding: 10px 18px;
+            border-radius: 6px;
+            color: white !important;
+        }
+        /* HERO */
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 70px 7%;
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                url("https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .hero-content {
+            max-width: 650px;
+        }
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero h1 span {
+            color: #22c55e;
+        }
+        .hero p {
+            font-size: 19px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            padding: 14px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .primary-btn {
+            background: #22c55e;
+            color: white;
+        }
+        .secondary-btn {
+            border: 2px solid white;
+            color: white;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        /* SEARCH BOX */
+        .search-section {
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            padding: 0 7%;
+        }
+        .search-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        .search-box label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+        .search-box select,
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        .search-btn {
+            border: none;
+            background: #22c55e;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 21px;
+        }
+        /* SECTION */
+        .section {
+            padding: 80px 7%;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+        .section-title p {
+            color: #666;
+        }
+        /* SPORTS */
+        .sports {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .sport-card {
+            background: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        .sport-card:hover {
+            transform: translateY(-7px);
+        }
+        .sport-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        .sport-card h3 {
+            margin-bottom: 8px;
+        }
+        .sport-card p {
+            color: #777;
+            font-size: 14px;
+        }
+        /* TURFS */
+        .turfs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .turf-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .turf-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+        .turf-info {
+            padding: 20px;
+        }
+        .turf-info h3 {
+            margin-bottom: 8px;
+        }
+        .location {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .price {
+            color: #16a34a;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .book-small {
+            display: inline-block;
+            background: #111827;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .feature {
+            background: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+        }
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .feature h3 {
+            margin-bottom: 8px;
+        }
+        .feature p {
+            color: #777;
+            font-size: 14px;
+        }
+        /* CTA */
+        .cta {
+            margin: 20px 7% 80px;
+            padding: 70px 20px;
+            text-align: center;
+            background: #111827;
+            color: white;
+            border-radius: 15px;
+        }
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+        .cta p {
+            margin-bottom: 25px;
+            color: #d1d5db;
+        }
+        /* FOOTER */
+        footer {
+            background: #0b1120;
+            color: white;
+            padding: 45px 7% 20px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        footer h3 {
+            margin-bottom: 15px;
+        }
+        footer p,
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            line-height: 2;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #374151;
+            padding-top: 20px;
+            color: #9ca3af;
+        }
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .search-box {
+                grid-template-columns: 1fr 1fr;
+            }
+            .sports {
+                grid-template-columns: 1fr 1fr;
+            }
+            .turfs {
+                grid-template-columns: 1fr;
+            }
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .search-box {
+                grid-template-columns: 1fr;
+            }
+            .sports {
+                grid-template-columns: 1fr;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                min-height: 550px;
+            }
+            .hero h1 {
+                font-size: 35px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            ⚽ Sport<span>Zone</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="turfs.html">Turfs</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="login.html" class="login-btn">Login</a>
+            </li>
+        </ul>
+    </header>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Play More.<br>
+                <span>Book Your Turf.</span>
+            </h1>
+            <p>
+                Find the best sports turfs and facilities near you.
+                Book your favorite sport, choose your time and start playing.
+            </p>
+            <div class="hero-buttons">
+                <a href="booking.html" class="btn primary-btn">
+                    🏟️ Book a Turf
+                </a>
+                <a href="turfs.html" class="btn secondary-btn">
+                    Explore Turfs
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- SEARCH -->
+    <section class="search-section">
+        <div class="search-box">
+            <div>
+                <label>SPORT</label>
+                <select>
+                    <option>Select Sport</option>
+                    <option>Cricket</option>
+                    <option>Football</option>
+                    <option>Badminton</option>
+                    <option>Basketball</option>
+                </select>
+            </div>
+            <div>
+                <label>LOCATION</label>
+                <select>
+                    <option>Select Location</option>
+                    <option>Chennai</option>
+                    <option>Ongole</option>
+                    <option>Nellore</option>
+                    <option>Bangalore</option>
+                </select>
+            </div>
+            <div>
+                <label>DATE</label>
+                <input type="date">
+            </div>
+            <button class="search-btn" onclick="searchTurf()">
+                🔍 Search Turf
+            </button>
+        </div>
+    </section>
+    <!-- SPORTS -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Choose Your Sport</h2>
+            <p>
+                Select your favorite sport and find the perfect facility.
+            </p>
+        </div>
+        <div class="sports">
+            <div class="sport-card">
+                <div class="sport-icon">🏏</div>
+                <h3>Cricket</h3>
+                <p>Book cricket grounds and nets.</p>
+            </div>
+            <div class="sport-card">
+                <div class="sport-icon">⚽</div>
+                <h3>Football</h3>
+                <p>Find football turfs near you.</p>
+            </div>
+            <div class="sport-card">
+                <div class="sport-icon">🏸</div>
+                <h3>Badminton</h3>
+                <p>Book indoor badminton courts.</p>
+            </div>
+            <div class="sport-card">
+                <div class="sport-icon">🏀</div>
+                <h3>Basketball</h3>
+                <p>Find basketball courts.</p>
+            </div>
+        </div>
+    </section>
+    <!-- POPULAR TURFS -->
+    <section class="section" style="background:#eef2f7;">
+        <div class="section-title">
+            <h2>Popular Turfs</h2>
+            <p>
+                Discover highly rated sports facilities.
+            </p>
+        </div>
+        <div class="turfs">
+            <div class="turf-card">
+                <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=800&q=80">
+                <div class="turf-info">
+                    <h3>Green Arena Turf</h3>
+                    <p class="location">
+                        📍 Chennai
+                    </p>
+                    <p class="price">
+                        ₹800 / hour
+                    </p>
+                    <a href="booking.html" class="book-small">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+            <div class="turf-card">
+                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80">
+                <div class="turf-info">
+                    <h3>Champions Football Turf</h3>
+                    <p class="location">
+                        📍 Nellore
+                    </p>
+                    <p class="price">
+                        ₹1000 / hour
+                    </p>
+                    <a href="booking.html" class="book-small">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+            <div class="turf-card">
+                <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=800&q=80">
+                <div class="turf-info">
+                    <h3>Smash Badminton Arena</h3>
+                    <p class="location">
+                        📍 Bangalore
+                    </p>
+                    <p class="price">
+                        ₹500 / hour
+                    </p>
+                    <a href="booking.html" class="book-small">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FEATURES -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Why Choose SportZone?</h2>
+            <p>
+                Everything you need for a great sporting experience.
+            </p>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Easy Booking</h3>
+                <p>Book your favorite turf in just a few clicks.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📍</div>
+                <h3>Nearby Turfs</h3>
+                <p>Discover sports facilities around your location.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💳</div>
+                <h3>Secure Payment</h3>
+                <p>Simple and secure online payment options.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⭐</div>
+                <h3>Best Facilities</h3>
+                <p>Choose from highly rated sports facilities.</p>
+            </div>
+        </div>
+    </section>
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+        <h2>Ready to Play?</h2>
+        <p>
+            Book your favorite turf today and enjoy your game.
+        </p>
+        <a href="booking.html" class="btn primary-btn">
+            Book Your Turf
+        </a>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>⚽ SportZone</h3>
+                <p>
+                    Your simple platform for discovering and
+                    booking sports turfs and facilities.
+                </p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="turfs.html">Turfs</a></p>
+                <p><a href="sports.html">Sports</a></p>
+                <p><a href="booking.html">Book Now</a></p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>📞 +91 98765 43210</p>
+                <p>📧 support@sportzone.com</p>
+                <p>📍 India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 SportZone. All Rights Reserved.
+        </div>
+    </footer>
+    <!-- JAVASCRIPT -->
+    <script>
+        function searchTurf() {
+            alert("Turf search feature will be connected to the booking page next!");
+        }
+    </script>
+</body>
+</html>

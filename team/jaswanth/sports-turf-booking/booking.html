@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Turf - SportZone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+        /* NAVBAR */
+        .navbar {
+            background: #111827;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: #22c55e;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #22c55e;
+        }
+        /* HEADER */
+        .page-header {
+            background: linear-gradient(135deg, #111827, #1f2937);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            color: #d1d5db;
+            font-size: 17px;
+        }
+        /* MAIN */
+        .booking-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 45px auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 30px;
+        }
+        /* FORM */
+        .booking-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .booking-form h2 {
+            margin-bottom: 25px;
+            color: #111827;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #22c55e;
+        }
+        /* TIME SLOTS */
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .time-slots input {
+            display: none;
+        }
+        .time-slots label {
+            padding: 12px 5px;
+            text-align: center;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: normal;
+            transition: 0.2s;
+        }
+        .time-slots label:hover {
+            border-color: #22c55e;
+        }
+        .time-slots input:checked + label {
+            background: #22c55e;
+            color: white;
+            border-color: #22c55e;
+        }
+        /* BUTTON */
+        .confirm-btn {
+            width: 100%;
+            padding: 15px;
+            background: #22c55e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .confirm-btn:hover {
+            background: #16a34a;
+        }
+        /* SUMMARY */
+        .summary {
+            background: #111827;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        .summary h2 {
+            color: #22c55e;
+            margin-bottom: 20px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid #374151;
+        }
+        .summary-row span:first-child {
+            color: #9ca3af;
+        }
+        .summary-row span:last-child {
+            text-align: right;
+            font-weight: bold;
+        }
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .summary-total span:last-child {
+            color: #22c55e;
+        }
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+        footer p {
+            color: #9ca3af;
+            margin: 5px;
+        }
+        /* MOBILE */
+        @media(max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+            .summary {
+                position: static;
+            }
+            .time-slots {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .page-header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            ⚽ SportZone
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="turfs.html">Turfs</a>
+            </li>
+            <li>
+                <a href="sports.html">Sports</a>
+            </li>
+            <li>
+                <a href="booking.html" class="active">Book Now</a>
+            </li>
+            <li>
+                <a href="bookings.html">My Bookings</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- HEADER -->
+    <section class="page-header">
+        <h1>🏟️ Book Your Turf</h1>
+        <p>Select your turf, sport, date and time</p>
+    </section>
+    <!-- BOOKING AREA -->
+    <section class="booking-container">
+        <!-- BOOKING FORM -->
+        <div class="booking-form">
+            <h2>Booking Details</h2>
+            <form onsubmit="confirmBooking(event)">
+                <!-- TURF -->
+                <div class="form-group">
+                    <label for="turf">
+                        Select Turf
+                    </label>
+                    <select id="turf" onchange="updatePrice()" required>
+                        <option value="">
+                            Select a turf
+                        </option>
+                        <option
+                            value="Green Arena Turf"
+                            data-price="800"
+                        >
+                            Green Arena Turf - ₹800/hr
+                        </option>
+                        <option
+                            value="Champions Football Turf"
+                            data-price="1000"
+                        >
+                            Champions Football Turf - ₹1000/hr
+                        </option>
+                        <option
+                            value="Smash Badminton Arena"
+                            data-price="500"
+                        >
+                            Smash Badminton Arena - ₹500/hr
+                        </option>
+                        <option
+                            value="City Football Arena"
+                            data-price="900"
+                        >
+                            City Football Arena - ₹900/hr
+                        </option>
+                        <option
+                            value="PowerPlay Cricket Ground"
+                            data-price="700"
+                        >
+                            PowerPlay Cricket Ground - ₹700/hr
+                        </option>
+                        <option
+                            value="Hoops Basketball Court"
+                            data-price="600"
+                        >
+                            Hoops Basketball Court - ₹600/hr
+                        </option>
+                    </select>
+                </div>
+                <!-- SPORT -->
+                <div class="form-group">
+                    <label for="sport">
+                        Select Sport
+                    </label>
+                    <select id="sport" onchange="updateSummary()" required>
+                        <option value="">
+                            Select a sport
+                        </option>
+                        <option value="Cricket">
+                            Cricket
+                        </option>
+                        <option value="Football">
+                            Football
+                        </option>
+                        <option value="Badminton">
+                            Badminton
+                        </option>
+                        <option value="Basketball">
+                            Basketball
+                        </option>
+                        <option value="Tennis">
+                            Tennis
+                        </option>
+                        <option value="Volleyball">
+                            Volleyball
+                        </option>
+                    </select>
+                </div>
+                <!-- DATE -->
+                <div class="form-group">
+                    <label for="date">
+                        Select Date
+                    </label>
+                    <input
+                        type="date"
+                        id="date"
+                        onchange="updateSummary()"
+                        required
+                    >
+                </div>
+                <!-- TIME -->
+                <div class="form-group">
+                    <label>
+                        Select Time
+                    </label>
+                    <div class="time-slots">
+                        <input
+                            type="radio"
+                            name="time"
+                            id="time1"
+                            value="6:00 AM"
+                            required
+                        >
+                        <label for="time1">
+                            6:00 AM
+                        </label>
+                        <input
+                            type="radio"
+                            name="time"
+                            id="time2"
+                            value="7:00 AM"
+                        >
+                        <label for="time2">
+                            7:00 AM
+                        </label>
+                        <input
+                            type="radio"
+                            name="time"
+                            id="time3"
+                            value="8:00 AM"
+                        >
+                        <label for="time3">
+                            8:00 AM
+                        </label>
+                        <input
+                            type="radio"
+                            name="time"
+                            id="time4"
+                            value="9:00 AM"
+                        >
+                        <label for="time4">
+                            9:00 AM
+                        </label>
+                        <input
+                            type="radio"
+                            name="time"
+                            id="time5"
+                            value="4:00 PM"
+                        >
+                        <label for="time5">
+                            4:00 PM
+                        </label>
+                        <input
+                            type="radio"
+                            name="time"
+                            id="time6"
+                            value="5:00 PM"
+                        >
+                        <label for="time6">
+                            5:00 PM
+                        </label>
+                        <input
+                            type="radio"
+                            name="time"
+                            id="time7"
+                            value="6:00 PM"
+                        >
+                        <label for="time7">
+                            6:00 PM
+                        </label>
+                        <input
+                            type="radio"
+                            name="time"
+                            id="time8"
+                            value="7:00 PM"
+                        >
+                        <label for="time8">
+                            7:00 PM
+                        </label>
+                        <input
+                            type="radio"
+                            name="time"
+                            id="time9"
+                            value="8:00 PM"
+                        >
+                        <label for="time9">
+                            8:00 PM
+                        </label>
+                    </div>
+                </div>
+                <!-- HOURS -->
+                <div class="form-group">
+                    <label for="hours">
+                        Number of Hours
+                    </label>
+                    <select
+                        id="hours"
+                        onchange="updatePrice()"
+                        required
+                    >
+                        <option value="1">
+                            1 Hour
+                        </option>
+                        <option value="2">
+                            2 Hours
+                        </option>
+                        <option value="3">
+                            3 Hours
+                        </option>
+                    </select>
+                </div>
+                <!-- NAME -->
+                <div class="form-group">
+                    <label for="name">
+                        Full Name
+                    </label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+                <!-- PHONE -->
+                <div class="form-group">
+                    <label for="phone">
+                        Phone Number
+                    </label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter phone number"
+                        required
+                    >
+                </div>
+                <!-- EMAIL -->
+                <div class="form-group">
+                    <label for="email">
+                        Email Address
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email address"
+                        required
+                    >
+                </div>
+                <!-- BUTTON -->
+                <button
+                    type="submit"
+                    class="confirm-btn"
+                >
+                    ✅ Confirm Booking
+                </button>
+            </form>
+        </div>
+        <!-- SUMMARY -->
+        <div class="summary">
+            <h2>📋 Booking Summary</h2>
+            <div class="summary-row">
+                <span>Turf</span>
+                <span id="summaryTurf">
+                    -
+                </span>
+            </div>
+            <div class="summary-row">
+                <span>Sport</span>
+                <span id="summarySport">
+                    -
+                </span>
+            </div>
+            <div class="summary-row">
+                <span>Date</span>
+                <span id="summaryDate">
+                    -
+                </span>
+            </div>
+            <div class="summary-row">
+                <span>Time</span>
+                <span id="summaryTime">
+                    -
+                </span>
+            </div>
+            <div class="summary-row">
+                <span>Hours</span>
+                <span id="summaryHours">
+                    1
+                </span>
+            </div>
+            <div class="summary-total">
+                <span>Total</span>
+                <span id="summaryTotal">
+                    ₹0
+                </span>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 SportZone. All Rights Reserved.
+        </p>
+        <p>
+            Play More. Book Your Turf.
+        </p>
+    </footer>
+    <script>
+        /* UPDATE SUMMARY */
+        function updateSummary() {
+            let turf =
+                document.getElementById("turf").value;
+            let sport =
+                document.getElementById("sport").value;
+            let date =
+                document.getElementById("date").value;
+            let hours =
+                document.getElementById("hours").value;
+            document.getElementById("summaryTurf").innerText =
+                turf || "-";
+            document.getElementById("summarySport").innerText =
+                sport || "-";
+            document.getElementById("summaryDate").innerText =
+                date || "-";
+            document.getElementById("summaryHours").innerText =
+                hours;
+            let selectedTime =
+                document.querySelector(
+                    'input[name="time"]:checked'
+                );
+            document.getElementById("summaryTime").innerText =
+                selectedTime
+                ? selectedTime.value
+                : "-";
+        }
+        /* UPDATE PRICE */
+        function updatePrice() {
+            let turfSelect =
+                document.getElementById("turf");
+            let selectedOption =
+                turfSelect.options[
+                    turfSelect.selectedIndex
+                ];
+            let price =
+                Number(
+                    selectedOption.getAttribute("data-price")
+                ) || 0;
+            let hours =
+                Number(
+                    document.getElementById("hours").value
+                );
+            let total =
+                price * hours;
+            document.getElementById("summaryTotal").innerText =
+                "₹" + total;
+            updateSummary();
+        }
+        /* TIME CHANGE */
+        document.querySelectorAll(
+            'input[name="time"]'
+        ).forEach(function(input) {
+            input.addEventListener(
+                "change",
+                updateSummary
+            );
+        });
+        /* CONFIRM BOOKING */
+        function confirmBooking(event) {
+            event.preventDefault();
+            let turf =
+                document.getElementById("turf").value;
+            let sport =
+                document.getElementById("sport").value;
+            let date =
+                document.getElementById("date").value;
+            let hours =
+                document.getElementById("hours").value;
+            let name =
+                document.getElementById("name").value;
+            let phone =
+                document.getElementById("phone").value;
+            let email =
+                document.getElementById("email").value;
+            /* SELECTED TIME */
+            let selectedTime =
+                document.querySelector(
+                    'input[name="time"]:checked'
+                );
+            if (!selectedTime) {
+                alert("Please select a time slot.");
+                return;
+            }
+            /* PRICE */
+            let turfSelect =
+                document.getElementById("turf");
+            let selectedOption =
+                turfSelect.options[
+                    turfSelect.selectedIndex
+                ];
+            let price =
+                Number(
+                    selectedOption.getAttribute("data-price")
+                );
+            let total =
+                price * Number(hours);
+            /* BOOKING OBJECT */
+            let booking = {
+                id: "SZ" + Date.now(),
+                turf: turf,
+                sport: sport,
+                date: date,
+                time: selectedTime.value,
+                hours: hours,
+                name: name,
+                phone: phone,
+                email: email,
+                total: total,
+                status: "Confirmed"
+            };
+            /* GET EXISTING BOOKINGS */
+            let bookings =
+                JSON.parse(
+                    localStorage.getItem("bookings")
+                ) || [];
+            /* ADD BOOKING */
+            bookings.push(booking);
+            /* SAVE BOOKING */
+            localStorage.setItem(
+                "bookings",
+                JSON.stringify(bookings)
+            );
+            alert(
+                "🎉 Booking confirmed successfully!"
+            );
+            /* GO TO MY BOOKINGS */
+            window.location.href =
+                "bookings.html";
+        }
+        /* INITIAL */
+        updatePrice();
+    </script>
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact - HomeFix</title>
+
+    <link rel="stylesheet" href="4%20style.css">
+
+    <style>
+
+        /* PAGE HEADER */
+
+        .page-header {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b5ed7,
+                    #087fba
+                );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+        }
+
+        .page-header h1 {
+
+            font-size: 42px;
+
+            margin-bottom: 12px;
+
+        }
+
+        .page-header p {
+
+            font-size: 18px;
+
+        }
+
+
+        /* CONTACT SECTION */
+
+        .contact-section {
+
+            padding: 60px 6%;
+
+            background: #f5f7fa;
+
+        }
+
+        .contact-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+
+        }
+
+
+        /* CONTACT INFO */
+
+        .contact-info {
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.1);
+
+        }
+
+        .contact-info h2 {
+
+            color: #0b5ed7;
+
+            margin-bottom: 15px;
+
+            font-size: 30px;
+
+        }
+
+        .contact-info > p {
+
+            color: #666;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .contact-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 18px 0;
+
+            border-bottom: 1px solid #eee;
+
+        }
+
+        .contact-item:last-child {
+
+            border-bottom: none;
+
+        }
+
+        .contact-icon {
+
+            width: 50px;
+
+            height: 50px;
+
+            background: #e8f1ff;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 24px;
+
+        }
+
+        .contact-item h3 {
+
+            margin-bottom: 5px;
+
+        }
+
+        .contact-item p {
+
+            color: #666;
+
+        }
+
+
+        /* CONTACT FORM */
+
+        .contact-form {
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.1);
+
+        }
+
+        .contact-form h2 {
+
+            color: #0b5ed7;
+
+            margin-bottom: 25px;
+
+            font-size: 30px;
+
+        }
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+        }
+
+        .form-group label {
+
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+        }
+
+        .form-group input,
+
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 7px;
+
+            font-size: 16px;
+
+            outline: none;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        .form-group input:focus,
+
+        .form-group textarea:focus {
+
+            border-color: #0b5ed7;
+
+        }
+
+        .form-group textarea {
+
+            height: 140px;
+
+            resize: vertical;
+
+        }
+
+
+        /* SEND BUTTON */
+
+        .send-btn {
+
+            width: 100%;
+
+            border: none;
+
+            background: #0b5ed7;
+
+            color: white;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+        .send-btn:hover {
+
+            background: #084298;
+
+        }
+
+
+        /* SUCCESS */
+
+        .success-message {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background: #d1fae5;
+
+            color: #065f46;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+        }
+
+
+        /* FAQ */
+
+        .faq-section {
+
+            padding: 60px 6%;
+
+            background: white;
+
+            text-align: center;
+
+        }
+
+        .faq-section h2 {
+
+            font-size: 32px;
+
+            margin-bottom: 35px;
+
+        }
+
+        .faq-container {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: left;
+
+        }
+
+        .faq {
+
+            background: #f5f7fa;
+
+            margin-bottom: 15px;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+        }
+
+        .faq h3 {
+
+            margin-bottom: 8px;
+
+            color: #0b5ed7;
+
+        }
+
+        .faq p {
+
+            color: #666;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .contact-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .page-header h1 {
+
+                font-size: 34px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🏠 HomeFix
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="providers.html">
+                Providers
+            </a>
+
+            <a href="booking.html">
+                Book Now
+            </a>
+
+            <a href="mybookings.html">
+                My Bookings
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <h1>
+            Contact Us
+        </h1>
+
+        <p>
+            We're here to help with your home service needs
+        </p>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section class="contact-section">
+
+        <div class="contact-container">
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="contact-info">
+
+                <h2>
+                    Get In Touch
+                </h2>
+
+                <p>
+                    Have a question or need help with your
+                    booking? Contact the HomeFix support team.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Phone
+                        </h3>
+
+                        <p>
+                            +91 98765 43210
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📧
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Email
+                        </h3>
+
+                        <p>
+                            support@homefix.com
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Address
+                        </h3>
+
+                        <p>
+                            HomeFix Service Center
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        🕐
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Working Hours
+                        </h3>
+
+                        <p>
+                            Monday - Sunday: 8 AM - 8 PM
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form">
+
+                <h2>
+                    Send Us a Message
+                </h2>
+
+
+                <form id="contactForm">
+
+
+                    <div class="form-group">
+
+                        <label for="contactName">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contactEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contactPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="contactPhone"
+                            placeholder="Enter your phone number"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="send-btn"
+                    >
+                        Send Message
+                    </button>
+
+                </form>
+
+
+                <div
+                    class="success-message"
+                    id="successMessage"
+                >
+                    ✅ Your message has been sent successfully!
+                    We will contact you soon.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FAQ -->
+
+    <section class="faq-section">
+
+        <h2>
+            Frequently Asked Questions
+        </h2>
+
+        <div class="faq-container">
+
+
+            <div class="faq">
+
+                <h3>
+                    How do I book a service?
+                </h3>
+
+                <p>
+                    Go to the Book Now page, select your
+                    service and provider, choose a date and
+                    time, enter your address and confirm
+                    your booking.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>
+                    Can I cancel my booking?
+                </h3>
+
+                <p>
+                    Yes. Go to My Bookings and click the
+                    Cancel Booking button.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>
+                    What services does HomeFix provide?
+                </h3>
+
+                <p>
+                    We provide plumbing, electrical,
+                    cleaning, AC service, painting and
+                    appliance repair services.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>
+                    How can I contact HomeFix?
+                </h3>
+
+                <p>
+                    You can call us, send an email or use
+                    the contact form on this page.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            🏠 HomeFix
+        </h3>
+
+        <p>
+            Home Maintenance & Repair Booking
+        </p>
+
+        <p>
+            © 2026 HomeFix. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+        contactForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                contactForm.style.display = "none";
+
+                successMessage.style.display = "block";
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

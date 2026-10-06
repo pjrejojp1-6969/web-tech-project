@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Service Providers - HomeFix</title>
+
+    <link rel="stylesheet" href="4%20style.css">
+
+    <style>
+
+        /* PAGE HEADER */
+
+        .page-header {
+            background: linear-gradient(135deg, #0b5ed7, #087fba);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+        }
+
+
+        /* PROVIDERS */
+
+        .providers-section {
+            padding: 70px 6%;
+            background: #f5f7fa;
+        }
+
+        .provider-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+
+        /* PROVIDER CARD */
+
+        .provider-card {
+            background: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+            transition: 0.3s;
+        }
+
+        .provider-card:hover {
+            transform: translateY(-8px);
+        }
+
+
+        /* PROFILE IMAGE */
+
+        .provider-image {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+        }
+
+
+        /* PROVIDER INFORMATION */
+
+        .provider-info {
+            padding: 25px;
+        }
+
+        .provider-info h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .profession {
+            color: #0b5ed7;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .rating {
+            color: #f5a623;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .experience {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .timing {
+            background: #f1f5f9;
+
+            padding: 10px;
+
+            border-radius: 7px;
+
+            margin-bottom: 20px;
+
+            color: #444;
+        }
+
+
+        /* BOOK BUTTON */
+
+        .provider-btn {
+            display: inline-block;
+
+            background: #0b5ed7;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 25px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .provider-btn:hover {
+            background: #084298;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .provider-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .page-header h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🏠 HomeFix
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="providers.html">Providers</a>
+
+            <a href="booking.html">Book Now</a>
+
+            <a href="mybookings.html">My Bookings</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <h1>Our Service Providers</h1>
+
+        <p>
+            Choose a trusted professional for your home
+        </p>
+
+    </section>
+
+
+
+    <!-- PROVIDERS -->
+
+    <section class="providers-section">
+
+        <div class="provider-grid">
+
+
+            <!-- PROVIDER 1 -->
+
+            <div class="provider-card">
+
+                <img
+                    class="provider-image"
+                    src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4"
+                    alt="Electrician"
+                >
+
+                <div class="provider-info">
+
+                    <h2>Raj Kumar</h2>
+
+                    <div class="profession">
+                        ⚡ Electrician
+                    </div>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐ 4.9
+                    </div>
+
+                    <div class="experience">
+                        Experience: 8 Years
+                    </div>
+
+                    <div class="timing">
+                        🕐 9:00 AM - 7:00 PM
+                    </div>
+
+                    <a href="booking.html" class="provider-btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROVIDER 2 -->
+
+            <div class="provider-card">
+
+                <img
+                    class="provider-image"
+                    src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39"
+                    alt="Plumber"
+                >
+
+                <div class="provider-info">
+
+                    <h2>Arun Kumar</h2>
+
+                    <div class="profession">
+                        🔧 Plumber
+                    </div>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐ 4.8
+                    </div>
+
+                    <div class="experience">
+                        Experience: 7 Years
+                    </div>
+
+                    <div class="timing">
+                        🕐 8:00 AM - 6:00 PM
+                    </div>
+
+                    <a href="booking.html" class="provider-btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROVIDER 3 -->
+
+            <div class="provider-card">
+
+                <img
+                    class="provider-image"
+                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952"
+                    alt="Cleaner"
+                >
+
+                <div class="provider-info">
+
+                    <h2>Priya Sharma</h2>
+
+                    <div class="profession">
+                        🧹 Cleaning Specialist
+                    </div>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐ 4.9
+                    </div>
+
+                    <div class="experience">
+                        Experience: 6 Years
+                    </div>
+
+                    <div class="timing">
+                        🕐 9:00 AM - 5:00 PM
+                    </div>
+
+                    <a href="booking.html" class="provider-btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROVIDER 4 -->
+
+            <div class="provider-card">
+
+                <img
+                    class="provider-image"
+                    src="https://images.unsplash.com/photo-1509391366360-2e959784a276"
+                    alt="Electrician"
+                >
+
+                <div class="provider-info">
+
+                    <h2>Vijay Reddy</h2>
+
+                    <div class="profession">
+                        ⚡ Electrician
+                    </div>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐ 4.7
+                    </div>
+
+                    <div class="experience">
+                        Experience: 5 Years
+                    </div>
+
+                    <div class="timing">
+                        🕐 10:00 AM - 8:00 PM
+                    </div>
+
+                    <a href="booking.html" class="provider-btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROVIDER 5 -->
+
+            <div class="provider-card">
+
+                <img
+                    class="provider-image"
+                    src="https://images.unsplash.com/photo-1620626011761-996317b8d101"
+                    alt="Plumber"
+                >
+
+                <div class="provider-info">
+
+                    <h2>Ravi Teja</h2>
+
+                    <div class="profession">
+                        🔧 Plumber
+                    </div>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐ 4.8
+                    </div>
+
+                    <div class="experience">
+                        Experience: 6 Years
+                    </div>
+
+                    <div class="timing">
+                        🕐 8:30 AM - 6:30 PM
+                    </div>
+
+                    <a href="booking.html" class="provider-btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROVIDER 6 -->
+
+            <div class="provider-card">
+
+                <img
+                    class="provider-image"
+                    src="https://images.unsplash.com/photo-1581579185169-8f3c1c2a0f4b"
+                    alt="Cleaner"
+                >
+
+                <div class="provider-info">
+
+                    <h2>Anjali Rao</h2>
+
+                    <div class="profession">
+                        🧹 Cleaning Specialist
+                    </div>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐ 4.9
+                    </div>
+
+                    <div class="experience">
+                        Experience: 4 Years
+                    </div>
+
+                    <div class="timing">
+                        🕐 9:00 AM - 6:00 PM
+                    </div>
+
+                    <a href="booking.html" class="provider-btn">
+                        Book Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>🏠 HomeFix</h3>
+
+        <p>
+            Home Maintenance & Repair Booking
+        </p>
+
+        <p>
+            © 2026 HomeFix. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
