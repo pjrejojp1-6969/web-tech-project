@@ -118,7 +118,6 @@ body {
 
 /* Hero Section */
 .hero {
-  /* Applied your specific image URL here */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMQMSCL4Dt7Yxw_qxaEVhz7IkkKsjnyIxlCjrDMSaBRkV71XxKxrCyiG8&s=10');
   background-size: cover;
   background-position: center;
@@ -144,14 +143,14 @@ body {
 }
 
 .hero-copy h1 {
-  font-size: 72px; /* Increased from 56px to make the main title bigger */
+  font-size: 72px;
   font-weight: 600;
   margin-bottom: 24px;
   line-height: 1.1;
 }
 
 .subtitle {
-  font-size: 18px; /* Slightly increased subtitle to match the bigger title */
+  font-size: 18px;
   color: #e5e5e5;
   margin-bottom: 32px;
 }
@@ -222,27 +221,19 @@ body {
   gap: 100px;
 }
 
-/* 
-  Sets all team member names (Jaswanth, Venkata Sai Charan, Saicharan) to Black 
-*/
+/* Team names inside a grey box with black text */
 .team-name {
   font-size: 32px;
   font-weight: 600;
   color: #000000; 
+  background-color: #808080; 
   margin-bottom: var(--spacing-lg);
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  padding-bottom: var(--spacing-sm);
-}
-
-/* 
-  Automatically selects ONLY the first team member (REJO) and makes the text White 
-*/
-.team-section:first-child .team-name {
-  color: #ffffff !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 16px 24px;
+  border-radius: 4px;
+  border: none;
 }
 
 .project-grid {
