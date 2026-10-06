@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forkfull – Food delivery near you</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<header>
+ <div class="logo">forkfull</div>
+ <label class="loc"><span aria-hidden="true">📍</span><select id="city" aria-label="Delivery location"></select></label>
+ <button class="cartbtn trk" id="trk" hidden>📍 Track order</button>
+ <button class="cartbtn" id="cartOpen">🛒 Cart · <span id="cc">0</span></button>
+</header>
+<main>
+ <section class="hero"><h1>Hungry? Let's get you a full fork.</h1><p id="sub"></p>
+ <input class="search" id="q" type="search" placeholder="Search restaurants or dishes" aria-label="Search"></section>
+ <div class="chips" id="chips"></div>
+ <div class="grid" id="grid"></div>
+</main>
+<footer>Forkfull · A demo food delivery site. No real orders or payments are processed.</footer>
+<div class="ov" id="ov"><div class="panel" id="panel"></div></div>
+<script src="script.js"></script></body></html>

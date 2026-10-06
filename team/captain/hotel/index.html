@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Staywell – Hotels and room bookings</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<header>
+ <div class="logo">staywell</div>
+ <label class="loc"><span aria-hidden="true">📍</span><select id="city" aria-label="Destination"></select></label>
+ <button class="btn" id="bkBtn" hidden>🧾 My bookings · <span id="bc">0</span></button>
+</header>
+<main>
+ <section class="hero"><h1>Find a room you'll sleep well in.</h1><p id="sub"></p>
+ <div class="bar">
+  <label>Check-in<input type="date" id="ci"></label>
+  <label>Check-out<input type="date" id="co"></label>
+  <label>Guests<select id="gs"></select></label>
+  <label>Rooms<select id="rm"></select></label>
+  <label>Search<input type="search" id="q" placeholder="Hotel or area"></label>
+ </div></section>
+ <div class="tools"><div class="chips" id="chips"></div>
+ <select class="sort" id="sort" aria-label="Sort hotels"><option value="rec">Recommended</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="rt">Top rated</option></select></div>
+ <div class="grid" id="grid"></div>
+</main>
+<footer>Staywell · A demo booking site. No real reservations or payments are made.</footer>
+<div class="ov" id="ov"><div class="panel" id="panel"></div></div>
+<script src="script.js"></script></body></html>

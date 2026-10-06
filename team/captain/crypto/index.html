@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crypto – Groceries in 10 minutes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="logo">crypto</div>
+  <button class="loc" id="locBtn"><b>Delivery in 10 minutes ⚡</b><small id="locTxt">Select location ▾</small></button>
+  <label class="search"><span aria-hidden="true">🔍</span><input id="q" type="search" placeholder='Search "milk", "toys", "chips"' aria-label="Search products"></label>
+  <a class="hb ph" href="tel:18001234567">📞 1800-123-4567</a>
+  <button class="hb" id="helpBtn">Help &amp; policy</button>
+  <button class="hb" id="trkBtn" hidden>📍 Track order</button>
+  <button class="hb" id="walBtn">💰 Crypto Cash ₹<span id="wb">0</span></button>
+  <button class="cartbtn" id="cartBtn">🛒 <span id="cc">0</span> · ₹<span id="ct">0</span></button>
+</div></header>
+
+<main class="wrap">
+  <section class="banner">
+    <div><span class="badge">⚡ 10 MIN DELIVERY</span><h1>Groceries &amp; toys delivered<br>before you blink</h1><p>Free delivery above ₹199. Track your rider live, cancel free within 2 minutes and get refunds as Crypto Cash.</p></div>
+    <div class="big">🛵</div>
+  </section>
+  <div class="perks"><div class="perk">⚡ <b>10 min</b> delivery</div><div class="perk">📍 <b>Live</b> order tracking</div><button class="perk" id="polBtn">💰 <b>Crypto Cash</b> refunds · see policy</button></div>
+  <div class="cats" id="cats"></div>
+  <div id="sections"></div>
+</main>
+<footer><div class="wrap">Help line: <a href="tel:18001234567">1800-123-4567</a> (sample number, replace with your own) · <a href="#" id="polLink">Cancellation &amp; refund policy</a><br>Demo site for learning purposes.</div></footer>
+
+<div class="ov" id="ov"><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+<div class="ov" id="tov"><div class="modal" id="tmodal" role="dialog" aria-modal="true"></div></div>
+<aside class="drawer" id="drawer" aria-label="Cart">
+  <div class="dh"><h3>My cart</h3><button class="x" style="position:static" id="closeCart" aria-label="Close cart">✕</button></div>
+  <div class="db" id="cartBody"></div>
+  <div class="df" id="cartFoot" hidden></div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
