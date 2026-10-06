@@ -26,6 +26,34 @@ const projectData = [
     type: "Streaming",
     path: "team/rejo/stream_box/index.html",
     description: "Live streaming and video platform."
+  },
+  {
+    member: "Jaswanth",
+    title: "HomeFix",
+    type: "Home Services",
+    path: "team/jaswanth/home-maintenance-booking/index.html",
+    description: "Home maintenance and repair booking system."
+  },
+  {
+    member: "Jaswanth",
+    title: "Modern Hospital",
+    type: "Healthcare",
+    path: "team/jaswanth/hospital-appointment-system/index.html",
+    description: "Hospital appointment and patient booking portal."
+  },
+  {
+    member: "Jaswanth",
+    title: "Salon App",
+    type: "Beauty Booking",
+    path: "team/jaswanth/salon-app/index.html",
+    description: "Salon booking app for services and appointments."
+  },
+  {
+    member: "Jaswanth",
+    title: "Sports Turf Booking",
+    type: "Sports Booking",
+    path: "team/jaswanth/sports-turf-booking/index.html",
+    description: "Booking interface for sports turf rentals and reservations."
   }
 ];
 
