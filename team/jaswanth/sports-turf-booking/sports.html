@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports - SportZone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+        /* ================= NAVBAR ================= */
+        .navbar {
+            background: #111827;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo span {
+            color: #22c55e;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .nav-links a:hover {
+            color: #22c55e;
+        }
+        .login-btn {
+            background: #22c55e;
+            padding: 10px 18px;
+            border-radius: 6px;
+        }
+        /* ================= HERO ================= */
+        .hero {
+            min-height: 430px;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.65),
+                    rgba(0,0,0,0.65)
+                ),
+                url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content {
+            max-width: 750px;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+        .hero h1 span {
+            color: #22c55e;
+        }
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #e5e7eb;
+        }
+        /* ================= SECTION ================= */
+        .section {
+            padding: 80px 7%;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .section-title p {
+            color: #666;
+        }
+        /* ================= SPORTS GRID ================= */
+        .sports-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 25px;
+        }
+        /* ================= SPORT CARD ================= */
+        .sport-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        .sport-card:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.15);
+        }
+        .sport-image {
+            position: relative;
+        }
+        .sport-image img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+        .sport-icon {
+            position: absolute;
+            bottom: -25px;
+            left: 20px;
+            width: 55px;
+            height: 55px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            border: 4px solid white;
+        }
+        .sport-info {
+            padding: 40px 20px 25px;
+        }
+        .sport-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .sport-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .sport-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .price {
+            color: #16a34a;
+            font-weight: bold;
+        }
+        .view-btn {
+            background: #111827;
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .view-btn:hover {
+            background: #22c55e;
+        }
+        /* ================= INFO ================= */
+        .info-section {
+            background: #111827;
+            color: white;
+            padding: 70px 7%;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 30px;
+        }
+        .info-card {
+            text-align: center;
+            padding: 20px;
+        }
+        .info-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+        .info-card h3 {
+            margin-bottom: 10px;
+        }
+        .info-card p {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+        /* ================= FOOTER ================= */
+        footer {
+            background: #0b1120;
+            color: white;
+            padding: 45px 7% 20px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns:
+                2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        footer h3 {
+            margin-bottom: 15px;
+        }
+        footer p,
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            line-height: 2;
+        }
+        .copyright {
+            text-align: center;
+            border-top:
+                1px solid #374151;
+            padding-top: 20px;
+            color: #9ca3af;
+        }
+        /* ================= MOBILE ================= */
+        @media(max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            .sports-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media(max-width: 600px) {
+            .sports-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo">
+        ⚽ Sport<span>Zone</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="turfs.html">
+                Turfs
+            </a>
+        </li>
+        <li>
+            <a href="sports.html">
+                Sports
+            </a>
+        </li>
+        <li>
+            <a href="booking.html">
+                Book Now
+            </a>
+        </li>
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+        <li>
+            <a
+                href="login.html"
+                class="login-btn"
+            >
+                Login
+            </a>
+        </li>
+    </ul>
+</header>
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>
+            Choose Your
+            <span>Sport</span>
+        </h1>
+        <p>
+            Whether you love cricket, football, badminton,
+            basketball or tennis, SportZone helps you find
+            the perfect place to play.
+        </p>
+    </div>
+</section>
+<!-- ================= SPORTS ================= -->
+<section class="section">
+    <div class="section-title">
+        <h2>
+            Popular Sports
+        </h2>
+        <p>
+            Select your favorite sport and find a facility.
+        </p>
+    </div>
+    <div class="sports-grid">
+        <!-- CRICKET -->
+        <div class="sport-card">
+            <div class="sport-image">
+                <img
+                    src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=80"
+                    alt="Cricket"
+                >
+                <div class="sport-icon">
+                    🏏
+                </div>
+            </div>
+            <div class="sport-info">
+                <h3>
+                    Cricket
+                </h3>
+                <p>
+                    Book cricket grounds, practice nets
+                    and cricket turfs for your next match.
+                </p>
+                <div class="sport-details">
+                    <span class="price">
+                        From ₹700/hr
+                    </span>
+                    <a
+                        href="turfs.html"
+                        class="view-btn"
+                    >
+                        View Turfs
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTBALL -->
+        <div class="sport-card">
+            <div class="sport-image">
+                <img
+                    src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80"
+                    alt="Football"
+                >
+                <div class="sport-icon">
+                    ⚽
+                </div>
+            </div>
+            <div class="sport-info">
+                <h3>
+                    Football
+                </h3>
+                <p>
+                    Find premium football turfs for
+                    5-a-side and 7-a-side games.
+                </p>
+                <div class="sport-details">
+                    <span class="price">
+                        From ₹900/hr
+                    </span>
+                    <a
+                        href="turfs.html"
+                        class="view-btn"
+                    >
+                        View Turfs
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- BADMINTON -->
+        <div class="sport-card">
+            <div class="sport-image">
+                <img
+                    src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=900&q=80"
+                    alt="Badminton"
+                >
+                <div class="sport-icon">
+                    🏸
+                </div>
+            </div>
+            <div class="sport-info">
+                <h3>
+                    Badminton
+                </h3>
+                <p>
+                    Book indoor badminton courts
+                    for singles and doubles games.
+                </p>
+                <div class="sport-details">
+                    <span class="price">
+                        From ₹500/hr
+                    </span>
+                    <a
+                        href="turfs.html"
+                        class="view-btn"
+                    >
+                        View Courts
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- BASKETBALL -->
+        <div class="sport-card">
+            <div class="sport-image">
+                <img
+                    src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=80"
+                    alt="Basketball"
+                >
+                <div class="sport-icon">
+                    🏀
+                </div>
+            </div>
+            <div class="sport-info">
+                <h3>
+                    Basketball
+                </h3>
+                <p>
+                    Find basketball courts and
+                    enjoy a competitive game.
+                </p>
+                <div class="sport-details">
+                    <span class="price">
+                        From ₹600/hr
+                    </span>
+                    <a
+                        href="turfs.html"
+                        class="view-btn"
+                    >
+                        View Courts
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- TENNIS -->
+        <div class="sport-card">
+            <div class="sport-image">
+                <img
+                    src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=900&q=80"
+                    alt="Tennis"
+                >
+                <div class="sport-icon">
+                    🎾
+                </div>
+            </div>
+            <div class="sport-info">
+                <h3>
+                    Tennis
+                </h3>
+                <p>
+                    Book quality tennis courts
+                    for practice and matches.
+                </p>
+                <div class="sport-details">
+                    <span class="price">
+                        From ₹600/hr
+                    </span>
+                    <a
+                        href="turfs.html"
+                        class="view-btn"
+                    >
+                        View Courts
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- VOLLEYBALL -->
+        <div class="sport-card">
+            <div class="sport-image">
+                <img
+                    src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=900&q=80"
+                    alt="Volleyball"
+                >
+                <div class="sport-icon">
+                    🏐
+                </div>
+            </div>
+            <div class="sport-info">
+                <h3>
+                    Volleyball
+                </h3>
+                <p>
+                    Find volleyball courts for
+                    friendly matches and tournaments.
+                </p>
+                <div class="sport-details">
+                    <span class="price">
+                        From ₹500/hr
+                    </span>
+                    <a
+                        href="turfs.html"
+                        class="view-btn"
+                    >
+                        View Courts
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================= WHY SPORTS ================= -->
+<section class="info-section">
+    <div class="section-title">
+        <h2>
+            Why Book With SportZone?
+        </h2>
+        <p>
+            Everything you need to enjoy your game.
+        </p>
+    </div>
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="info-icon">
+                🔍
+            </div>
+            <h3>
+                Easy Discovery
+            </h3>
+            <p>
+                Find sports facilities based on
+                your preferred sport and location.
+            </p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">
+                📅
+            </div>
+            <h3>
+                Flexible Timing
+            </h3>
+            <p>
+                Choose a date and available time
+                that works best for your team.
+            </p>
+        </div>
+        <div class="info-card">
+            <div class="info-icon">
+                ⭐
+            </div>
+            <h3>
+                Quality Facilities
+            </h3>
+            <p>
+                Select from highly rated and
+                well-maintained sports facilities.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>
+                ⚽ SportZone
+            </h3>
+            <p>
+                Your simple platform for discovering
+                and booking sports facilities.
+            </p>
+        </div>
+        <div>
+            <h3>
+                Quick Links
+            </h3>
+            <p>
+                <a href="index.html">
+                    Home
+                </a>
+            </p>
+            <p>
+                <a href="turfs.html">
+                    Turfs
+                </a>
+            </p>
+            <p>
+                <a href="sports.html">
+                    Sports
+                </a>
+            </p>
+            <p>
+                <a href="booking.html">
+                    Book Now
+                </a>
+            </p>
+        </div>
+        <div>
+            <h3>
+                Contact
+            </h3>
+            <p>
+                📞 +91 98765 43210
+            </p>
+            <p>
+                📧 support@sportzone.com
+            </p>
+            <p>
+                📍 India
+            </p>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2026 SportZone. All Rights Reserved.
+    </div>
+</footer>
+</body>
+</html>

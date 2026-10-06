@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings - HomeFix</title>
+
+    <link rel="stylesheet" href="4%20style.css">
+
+    <style>
+
+        .page-header {
+            background: linear-gradient(135deg, #0b5ed7, #087fba);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .bookings-section {
+            min-height: 500px;
+            padding: 60px 20px;
+            background: #f5f7fa;
+        }
+
+        .bookings-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .booking-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+            border-left: 6px solid #0b5ed7;
+        }
+
+        .booking-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .booking-top h2 {
+            color: #0b5ed7;
+        }
+
+        .status {
+            background: #d1fae5;
+            color: #065f46;
+
+            padding: 7px 14px;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+        }
+
+        .booking-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .detail {
+            background: #f8fafc;
+
+            padding: 12px;
+
+            border-radius: 7px;
+        }
+
+        .detail strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .detail span {
+            color: #666;
+        }
+
+        .problem {
+            background: #f8fafc;
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+            margin-bottom: 20px;
+        }
+
+        .cancel-btn {
+            background: #dc3545;
+            color: white;
+
+            border: none;
+
+            padding: 10px 18px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+        .cancel-btn:hover {
+            background: #b02a37;
+        }
+
+        .empty {
+            background: white;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .empty-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .empty h2 {
+            margin-bottom: 10px;
+        }
+
+        .empty p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .book-now {
+            display: inline-block;
+
+            background: #0b5ed7;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 25px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+
+            .booking-details {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🏠 HomeFix
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="services.html">Services</a>
+
+            <a href="providers.html">Providers</a>
+
+            <a href="booking.html">Book Now</a>
+
+            <a href="mybookings.html">My Bookings</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <h1>My Bookings</h1>
+
+        <p>
+            View and manage your home service bookings
+        </p>
+
+    </section>
+
+
+
+    <!-- BOOKINGS -->
+
+    <section class="bookings-section">
+
+        <div
+            class="bookings-container"
+            id="bookingsContainer"
+        ></div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>🏠 HomeFix</h3>
+
+        <p>
+            Home Maintenance & Repair Booking
+        </p>
+
+        <p>
+            © 2026 HomeFix. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function loadBookings() {
+
+            const container =
+                document.getElementById("bookingsContainer");
+
+
+            let bookings =
+                JSON.parse(
+                    localStorage.getItem("homeFixBookings")
+                ) || [];
+
+
+            container.innerHTML = "";
+
+
+            /* NO BOOKINGS */
+
+            if (bookings.length === 0) {
+
+                container.innerHTML = `
+
+                    <div class="empty">
+
+                        <div class="empty-icon">
+                            📅
+                        </div>
+
+                        <h2>
+                            No Bookings Yet
+                        </h2>
+
+                        <p>
+                            You haven't booked any home services yet.
+                        </p>
+
+                        <a
+                            href="booking.html"
+                            class="book-now"
+                        >
+                            Book a Service
+                        </a>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+
+            /* DISPLAY BOOKINGS */
+
+            bookings.reverse().forEach(function(booking) {
+
+                const card =
+                    document.createElement("div");
+
+                card.className = "booking-card";
+
+
+                card.innerHTML = `
+
+                    <div class="booking-top">
+
+                        <h2>
+                            ${getServiceIcon(booking.service)}
+                            ${booking.service}
+                        </h2>
+
+                        <span class="status">
+                            ${booking.status}
+                        </span>
+
+                    </div>
+
+
+                    <div class="booking-details">
+
+                        <div class="detail">
+
+                            <strong>
+                                👤 Customer
+                            </strong>
+
+                            <span>
+                                ${booking.name}
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <strong>
+                                📞 Phone
+                            </strong>
+
+                            <span>
+                                ${booking.phone}
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <strong>
+                                👨‍🔧 Service Provider
+                            </strong>
+
+                            <span>
+                                ${booking.provider}
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <strong>
+                                📅 Date
+                            </strong>
+
+                            <span>
+                                ${booking.date}
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <strong>
+                                🕐 Time
+                            </strong>
+
+                            <span>
+                                ${booking.time}
+                            </span>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <strong>
+                                📍 Address
+                            </strong>
+
+                            <span>
+                                ${booking.address}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="problem">
+
+                        <strong>
+                            🔧 Problem Description
+                        </strong>
+
+                        <p>
+                            ${booking.problem}
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="cancel-btn"
+                        onclick="cancelBooking(${booking.id})"
+                    >
+                        Cancel Booking
+                    </button>
+
+                `;
+
+
+                container.appendChild(card);
+
+            });
+
+        }
+
+
+
+        /* SERVICE ICON */
+
+        function getServiceIcon(service) {
+
+            if (service === "Plumbing") {
+                return "🔧";
+            }
+
+            if (service === "Electrical") {
+                return "⚡";
+            }
+
+            if (service === "Cleaning") {
+                return "🧹";
+            }
+
+            if (service === "AC Service") {
+                return "❄️";
+            }
+
+            if (service === "Painting") {
+                return "🎨";
+            }
+
+            if (service === "Appliance Repair") {
+                return "🔌";
+            }
+
+            return "🏠";
+        }
+
+
+
+        /* CANCEL BOOKING */
+
+        function cancelBooking(id) {
+
+            const confirmCancel =
+                confirm(
+                    "Are you sure you want to cancel this booking?"
+                );
+
+
+            if (!confirmCancel) {
+                return;
+            }
+
+
+            let bookings =
+                JSON.parse(
+                    localStorage.getItem("homeFixBookings")
+                ) || [];
+
+
+            bookings =
+                bookings.filter(function(booking) {
+
+                    return booking.id !== id;
+
+                });
+
+
+            localStorage.setItem(
+                "homeFixBookings",
+                JSON.stringify(bookings)
+            );
+
+
+            loadBookings();
+
+        }
+
+
+
+        /* LOAD BOOKINGS */
+
+        loadBookings();
+
+    </script>
+
+
+</body>
+
+</html>

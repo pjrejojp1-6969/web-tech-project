@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SportZone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+        /* NAVBAR */
+        .navbar {
+            background: #111827;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #22c55e;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #22c55e;
+        }
+        /* HEADER */
+        .page-header {
+            background: linear-gradient(135deg, #111827, #1f2937);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            color: #d1d5db;
+            font-size: 17px;
+        }
+        /* CONTACT SECTION */
+        .contact-container {
+            width: 86%;
+            max-width: 1100px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        /* CONTACT INFO */
+        .contact-info {
+            background: #111827;
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+        }
+        .contact-info h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .contact-info > p {
+            color: #d1d5db;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        .info-box {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        .info-icon {
+            font-size: 25px;
+        }
+        .info-box h3 {
+            margin-bottom: 5px;
+        }
+        .info-box p {
+            color: #d1d5db;
+        }
+        /* FORM */
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .contact-form h2 {
+            margin-bottom: 25px;
+            color: #111827;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #22c55e;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .submit-btn {
+            width: 100%;
+            background: #22c55e;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #16a34a;
+        }
+        /* SUCCESS MESSAGE */
+        .success-message {
+            display: none;
+            margin-top: 18px;
+            padding: 15px;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 8px;
+            text-align: center;
+        }
+        /* FAQ */
+        .faq-section {
+            width: 86%;
+            max-width: 1100px;
+            margin: 20px auto 60px;
+        }
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 30px;
+        }
+        .faq {
+            background: white;
+            margin-bottom: 12px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+        .faq h3 {
+            margin-bottom: 8px;
+        }
+        .faq p {
+            color: #666;
+            line-height: 1.6;
+        }
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+        footer p {
+            color: #9ca3af;
+            margin: 5px;
+        }
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+            .page-header h1 {
+                font-size: 32px;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            ⚽ SportZone
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="turfs.html">Turfs</a>
+            </li>
+            <li>
+                <a href="sports.html">Sports</a>
+            </li>
+            <li>
+                <a href="booking.html">Book Now</a>
+            </li>
+            <li>
+                <a href="bookings.html">My Bookings</a>
+            </li>
+            <li>
+                <a href="contact.html" class="active">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <h1>📞 Contact Us</h1>
+        <p>We're here to help you with your turf booking</p>
+    </section>
+    <!-- CONTACT SECTION -->
+    <section class="contact-container">
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>
+                Have questions about our turfs, bookings or facilities?
+                Contact the SportZone team and we'll be happy to help.
+            </p>
+            <div class="info-box">
+                <div class="info-icon">📍</div>
+                <div>
+                    <h3>Address</h3>
+                    <p>SportZone Sports Arena</p>
+                    <p>Chennai, Tamil Nadu, India</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="info-icon">📞</div>
+                <div>
+                    <h3>Phone</h3>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="info-icon">📧</div>
+                <div>
+                    <h3>Email</h3>
+                    <p>support@sportzone.com</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="info-icon">⏰</div>
+                <div>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Sunday</p>
+                    <p>6:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+        </div>
+        <!-- CONTACT FORM -->
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form onsubmit="sendMessage(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select id="subject" required>
+                        <option value="">
+                            Select a subject
+                        </option>
+                        <option>
+                            Turf Booking
+                        </option>
+                        <option>
+                            Payment Issue
+                        </option>
+                        <option>
+                            Cancellation
+                        </option>
+                        <option>
+                            General Enquiry
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea
+                        id="message"
+                        placeholder="Write your message..."
+                        required
+                    ></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    Send Message
+                </button>
+            </form>
+            <div id="successMessage" class="success-message">
+                ✅ Your message has been sent successfully!
+            </div>
+        </div>
+    </section>
+    <!-- FAQ -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <h3>🏟️ How can I book a turf?</h3>
+            <p>
+                Go to the Book Now page, select your turf, sport,
+                date and time, then confirm your booking.
+            </p>
+        </div>
+        <div class="faq">
+            <h3>💳 How much does turf booking cost?</h3>
+            <p>
+                Prices depend on the turf and the number of hours
+                you choose.
+            </p>
+        </div>
+        <div class="faq">
+            <h3>❌ Can I cancel my booking?</h3>
+            <p>
+                Yes. You can cancel your booking from the My Bookings page.
+            </p>
+        </div>
+        <div class="faq">
+            <h3>⏰ What are the available timings?</h3>
+            <p>
+                Most turfs are available from morning until evening.
+                Available slots are shown on the booking page.
+            </p>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 SportZone. All Rights Reserved.</p>
+        <p>Play More. Book Your Turf.</p>
+    </footer>
+    <script>
+        function sendMessage(event) {
+            event.preventDefault();
+            let name =
+                document.getElementById("name").value;
+            let email =
+                document.getElementById("email").value;
+            let phone =
+                document.getElementById("phone").value;
+            let subject =
+                document.getElementById("subject").value;
+            let message =
+                document.getElementById("message").value;
+            /* DEMO MESSAGE */
+            console.log({
+                name: name,
+                email: email,
+                phone: phone,
+                subject: subject,
+                message: message
+            });
+            document.getElementById("successMessage").style.display =
+                "block";
+            document.querySelector("form").reset();
+            alert(
+                "Thank you " + name +
+                "! Your message has been sent successfully."
+            );
+        }
+    </script>
+</body>
+</html>
