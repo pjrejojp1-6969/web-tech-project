@@ -58,7 +58,7 @@ const teamData = [
     ]
   },
   {
-    name: "Captain",
+    name: "venkata sai charan",
     projects: [
       {
         title: "Hotel Booking",
@@ -67,10 +67,10 @@ const teamData = [
         description: "A responsive hotel booking and accommodation interface."
       },
       {
-        title: "Static Page",
-        type: "Landing Page",
+        title: "Forkfull",
+        type: "food ordering",
         path: "team/captain/static/index.html",
-        description: "A clean, responsive static website template."
+        description: "A food ordering website."
       },
       {
         title: "Travel Explorer",
@@ -79,10 +79,10 @@ const teamData = [
         description: "A travel destination and tour booking platform."
       },
       {
-        title: "Crypto Dashboard",
-        type: "Finance / Web3",
+        title: "Crypto",
+        type: "grocery ordering",
         path: "team/captain/crypto/index.html",
-        description: "A cryptocurrency tracking and information dashboard."
+        description: "A grocery ordering website."
       }
     ]
   },
