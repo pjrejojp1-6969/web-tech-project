@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  max-width: 1400px; 
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
@@ -41,7 +41,7 @@ body {
   z-index: 100;
 }
 
-.site-header .nav {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,8 +54,8 @@ body {
   gap: 12px;
   font-weight: 600;
   font-size: 20px;
-  letter-spacing: 1px;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .brand-mark {
@@ -85,7 +85,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   transition: opacity 0.3s ease;
-  cursor: pointer;
 }
 
 .nav-links a:hover {
@@ -119,16 +118,48 @@ body {
 
 /* Hero Section */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMQMSCL4Dt7Yxw_qxaEVhz7IkkKsjnyIxlCjrDMSaBRkV71XxKxrCyiG8&s=10');
+  /* Applied your specific image URL here */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMQMSCL4Dt7Yxw_qxaEVhz7IkkKsjnyIxlCjrDMSaBRkV71XxKxrCyiG8&s=10');
   background-size: cover;
   background-position: center;
   min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-copy {
   text-align: center;
-  padding-bottom: 15vh;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+}
+
+.hero-copy h1 {
+  font-size: 72px; /* Increased from 56px to make the main title bigger */
+  font-weight: 600;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 18px; /* Slightly increased subtitle to match the bigger title */
+  color: #e5e5e5;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
 }
 
 /* Sections */
@@ -140,12 +171,23 @@ body {
 }
 
 .section-gallery {
-  margin-top: -20vh; 
+  margin-top: -20vh;
   position: relative;
   z-index: 10;
   padding-top: 0;
   background: transparent;
   backdrop-filter: none;
+}
+
+.section-alt {
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.section-text {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--color-muted);
 }
 
 .section-heading {
@@ -157,7 +199,12 @@ body {
   font-size: 36px;
   font-weight: 300;
   letter-spacing: 1px;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  color: #ffffff;
+}
+
+.section-gallery .section-heading h2 {
+  color: #000000;
+  text-shadow: none;
 }
 
 .section-heading p {
@@ -175,7 +222,9 @@ body {
   gap: 100px;
 }
 
-/* Base Team Name styling (Black for everyone else) */
+/* 
+  Sets all team member names (Jaswanth, Venkata Sai Charan, Saicharan) to Black 
+*/
 .team-name {
   font-size: 32px;
   font-weight: 600;
@@ -184,17 +233,18 @@ body {
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15); 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   padding-bottom: var(--spacing-sm);
 }
 
-/* Highlight specifically Rejo with White */
-.team-name.rejo {
+/* 
+  Automatically selects ONLY the first team member (REJO) and makes the text White 
+*/
+.team-section:first-child .team-name {
   color: #ffffff !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* Project Grid: Forced 4 columns */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -246,7 +296,7 @@ body {
 .project-content h3 {
   font-size: 24px;
   font-weight: 400;
-  font-family: "Georgia", serif; 
+  font-family: "Georgia", serif;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
 }
@@ -317,7 +367,7 @@ body {
 
 @media (max-width: 768px) {
   .hero-copy h1 { font-size: 48px; }
-  .section-gallery { margin-top: -10vh; } 
-  .nav-links { display: none; } 
+  .section-gallery { margin-top: -10vh; }
+  .nav-links { display: none; }
   .project-grid { grid-template-columns: 1fr; }
 }
