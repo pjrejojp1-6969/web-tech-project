@@ -1,80 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Technology Projects - Team Collection</title>
-  <meta name="description" content="A modern UI project showcase collection from our team." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Tech Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Assuming you are importing Inter font from Google Fonts based on your CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav">
       <div class="brand">
         <span class="brand-mark">W</span>
-        <span>Web Tech Projects</span>
+        Web Tech Projects
       </div>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="button button-primary" href="#gallery">Explore</a>
+      <div class="nav-links">
+        <a href="#">Gallery</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#" class="button button-primary">Explore</a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-copy">
-          <h1>Web Technology Projects</h1>
-          <p class="subtitle">
-            A curated collection of modern web design projects from our talented team of developers, showcasing innovative UI/UX design and interactive features.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#gallery">Browse Projects</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-copy">
+      <h1 style="font-size: 56px; font-weight: 500; margin-bottom: 16px;">Web Technology Projects</h1>
+      <p style="font-size: 16px; margin-bottom: 32px; color: #e5e5e5;">A curated collection of modern web design projects from our talented team of developers, showcasing innovative UI/UX design and interactive features.</p>
+      <button class="button button-primary">Browse Projects</button>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section section-gallery container">
+    <div class="section-heading">
+      <h2 style="color: #000000; text-shadow: none;">Project Gallery</h2>
+      <p>Explore all projects by team members</p>
+    </div>
+
+    <div class="team-container">
+      
+      <!-- Team Member: REJO (White Text) -->
+      <div class="team-section">
+        <div class="team-name rejo">REJO</div>
+        <div class="project-grid">
+          
+          <!-- Card 1 -->
+          <div class="project-card">
+            <div class="project-preview" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop');"></div>
+            <div class="project-content">
+              <span class="project-tag">E-Commerce</span>
+              <h3>TechStore Redesign</h3>
+              <p>A modern frontend redesign for a tech gadget store.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
           </div>
+
+          <!-- Card 2 -->
+          <div class="project-card">
+            <div class="project-preview" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&auto=format&fit=crop');"></div>
+            <div class="project-content">
+              <span class="project-tag">Portfolio</span>
+              <h3>Creative Agency</h3>
+              <p>A sleek, interactive portfolio for a design agency.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="project-card">
+            <div class="project-preview" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop');"></div>
+            <div class="project-content">
+              <span class="project-tag">Dashboard</span>
+              <h3>Analytics Hub</h3>
+              <p>Data visualization dashboard using modern web APIs.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="project-card">
+            <div class="project-preview" style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&auto=format&fit=crop');"></div>
+            <div class="project-content">
+              <span class="project-tag">Web App</span>
+              <h3>Task Manager</h3>
+              <p>A productivity web application built with modern frameworks.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <section id="gallery" class="section section-gallery">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Project Gallery</h2>
-          <p>Explore all projects by team members</p>
+      <!-- Team Member: OTHER TEAM MATE (Black Text) -->
+      <div class="team-section">
+        <div class="team-name">OTHER TEAM MATE</div>
+        <div class="project-grid">
+          
+          <!-- Card 1 -->
+          <div class="project-card">
+            <div class="project-preview" style="background-image: url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&auto=format&fit=crop');"></div>
+            <div class="project-content">
+              <span class="project-tag">Corporate</span>
+              <h3>FinTech Solutions</h3>
+              <p>Secure and responsive corporate banking landing page.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="project-card">
+            <div class="project-preview" style="background-image: url('https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=500&auto=format&fit=crop');"></div>
+            <div class="project-content">
+              <span class="project-tag">Blog</span>
+              <h3>Travel Diaries</h3>
+              <p>Content-rich blogging platform with masonry layout.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="project-card">
+            <div class="project-preview" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&auto=format&fit=crop');"></div>
+            <div class="project-content">
+              <span class="project-tag">Utility</span>
+              <h3>Weather App</h3>
+              <p>Real-time weather application with geolocation.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="project-card">
+            <div class="project-preview" style="background-image: url('https://images.unsplash.com/photo-1607706189992-eae578626c86?w=500&auto=format&fit=crop');"></div>
+            <div class="project-content">
+              <span class="project-tag">Social</span>
+              <h3>Connect</h3>
+              <p>A social networking interface focused on accessibility.</p>
+              <a href="#" class="project-link">View Project</a>
+            </div>
+          </div>
+
         </div>
-        <div id="team-container" class="team-container" aria-live="polite"></div>
       </div>
-    </section>
 
-    <section id="about" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <h2>About This Collection</h2>
-        </div>
-        <p class="section-text">
-          These projects showcase modern UI/UX design, interactive features, and responsive layouts. Each project is built with HTML, CSS, and JavaScript for a clean, functional experience. Our team collaborates to bring creative ideas to life.
-        </p>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-content">
-      <p>© <span id="year"></span> Web Technology Projects</p>
-      <a href="https://github.com/pjrejojp1-6969/web-tech-project" target="_blank" rel="noreferrer">
-        View on GitHub
-      </a>
+      <span>&copy; 2026 Web Tech Projects</span>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
