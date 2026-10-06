@@ -197,6 +197,26 @@ body {
   line-height: 1.8;
 }
 
+/* Team Container */
+.team-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.team-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.team-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-red);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 3px solid var(--color-peach);
+}
+
 /* Project Grid */
 .project-grid {
   display: grid;
@@ -325,6 +345,10 @@ body {
 
   .section-heading h2 {
     font-size: 28px;
+  }
+
+  .team-name {
+    font-size: 24px;
   }
 
   .nav-links {
