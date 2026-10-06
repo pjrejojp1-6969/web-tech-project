@@ -27,8 +27,8 @@ const teamData = [
         title: "Stream Box",
         type: "Streaming",
         path: "team/rejo/stream_box/index.html",
-        description: "Live streaming and video platform.",
-        image: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=800&auto=format&fit=crop"
+        description: "Netflix-style movie and video streaming platform.",
+        image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=800&auto=format&fit=crop" /* Netflix/TV Vibe */
       }
     ]
   },
@@ -61,12 +61,12 @@ const teamData = [
         type: "Sports Booking",
         path: "team/jaswanth/sports-turf-booking/index.html",
         description: "Booking interface for sports turf rentals and reservations.",
-        image: "https://images.unsplash.com/photo-1529900965798-eb4052b968cb?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1459865264687-595d652de67e?q=80&w=800&auto=format&fit=crop" /* Football Turf */
       }
     ]
   },
   {
-    name: "venkata sai charan",
+    name: "Venkata Sai Charan",
     projects: [
       {
         title: "Hotel Booking",
@@ -77,7 +77,7 @@ const teamData = [
       },
       {
         title: "Forkfull",
-        type: "food ordering",
+        type: "Food Ordering",
         path: "team/captain/static/index.html",
         description: "A food ordering website.",
         image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop"
@@ -91,10 +91,10 @@ const teamData = [
       },
       {
         title: "Crypto",
-        type: "grocery ordering",
+        type: "Grocery Delivery",
         path: "team/captain/crypto/index.html",
-        description: "A grocery ordering website.",
-        image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=800&auto=format&fit=crop"
+        description: "A grocery and fresh produce ordering website.",
+        image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop" /* Groceries */
       }
     ]
   },
@@ -120,7 +120,7 @@ const teamData = [
         type: "Storage",
         path: "team/Saicharan/StashBox/index.html",
         description: "Secure file storage and management system.",
-        image: "https://images.unsplash.com/photo-1614064019488-ab9308643806?q=80&w=800&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop" /* Server/Storage */
       },
       {
         title: "StockPulse",
@@ -170,3 +170,15 @@ const yearNode = document.getElementById("year");
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
 }
+
+// Contact Button Logic
+document.addEventListener("DOMContentLoaded", () => {
+  const contactLink = document.querySelector('a[href="#contact"]');
+  if (contactLink) {
+    contactLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      const memberNames = teamData.map(team => team.name).join("\n• ");
+      alert(`Meet our team:\n\n• ${memberNames}\n\nThanks for checking out our projects!`);
+    });
+  }
+});
