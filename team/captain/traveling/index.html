@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tidewander Journeys</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="#home">Tide<span>wander</span></a>
+  <nav id="nav" aria-label="Main"></nav>
+  <button class="tog" id="theme" aria-label="Toggle dark mode">Dark mode</button>
+</header>
+
+<main>
+<section class="page" id="home">
+  <div class="hero">
+    <h1>Follow the tide to somewhere new.</h1>
+    <p>Handpicked trips to 11 destinations, with stays, transfers and local guides sorted before you pack.</p>
+    <a class="btn" href="#book">Plan my trip</a><a class="btn alt" href="#places">See destinations</a>
+  </div>
+  <h2 class="t">Why travel with Tidewander</h2>
+  <div class="feat">
+    <div>Fixed prices per traveler, shown before you book.</div>
+    <div>Trips built for couples, families, friends and solo travelers.</div>
+    <div>Stays checked by our team, not just star ratings.</div>
+    <div>One person on call for you from takeoff to touchdown.</div>
+  </div>
+  <div class="banner"><h2>Seven Wonders Voyage</h2><p>15 days, 14 nights across the Great Wall, Petra, Machu Picchu, Taj Mahal and more.</p><br><a class="btn" href="#packages">View packages</a></div>
+</section>
+
+<section class="page" id="about">
+  <h2 class="t">About Tidewander</h2>
+  <p class="sub">We started with one idea: planning a trip should feel as good as taking it.</p>
+  <div class="two">
+    <div class="card"><div class="pad"><h3>Our mission</h3><p>Make travel simple, fairly priced and memorable, with clear details at every step.</p></div></div>
+    <div class="card"><div class="pad"><h3>Our vision</h3><p>Be the agency people trust to take them somewhere they have always wanted to see.</p></div></div>
+  </div>
+</section>
+
+<section class="page" id="places">
+  <h2 class="t">Destinations</h2>
+  <p class="sub">Pick a place, then book it with one tap.</p>
+  <div class="grid" id="placeGrid"></div>
+</section>
+
+<section class="page" id="packages">
+  <h2 class="t">Trip packages</h2>
+  <p class="sub">Package prices are per person and include stay and transfers.</p>
+  <div class="grid" id="pkgGrid"></div>
+</section>
+
+<section class="page" id="book">
+  <h2 class="t">Book your trip</h2>
+  <p class="sub">Fill in the form and get an instant estimate. Our team will call you to confirm.</p>
+  <form id="bookingForm" novalidate>
+    <label for="fullname">Full name</label><input id="fullname" placeholder="Your full name">
+    <label for="phone">Phone number</label><input id="phone" type="tel" placeholder="10-digit number">
+    <label for="email">Email</label><input id="email" type="email" placeholder="you@example.com">
+    <label for="destination">Destination</label><select id="destination"><option value="">Select destination</option></select>
+    <label for="travelers">Number of travelers</label>
+    <select id="travelers"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6-10</option><option>10+</option></select>
+    <label for="departure">Departure date</label><input id="departure" type="date">
+    <label for="ret">Return date (optional)</label><input id="ret" type="date">
+    <label for="request">Special requests (optional)</label><textarea id="request" maxlength="150" rows="3"></textarea>
+    <div class="chk"><input type="checkbox" id="agree"><label for="agree">I agree to the Terms &amp; Conditions</label></div>
+    <div class="err" id="err" role="alert"></div>
+    <button class="btn" type="submit">Book now</button>
+  </form>
+</section>
+
+<section class="page" id="gallery">
+  <h2 class="t">Gallery</h2>
+  <p class="sub">Tap a tile for a closer look.</p>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="galGrid"></div>
+</section>
+
+<section class="page" id="guide">
+  <h2 class="t">Travel guide</h2>
+  <p class="sub">Eight things to sort before you leave.</p>
+  <div class="grid" id="guideGrid"></div>
+</section>
+
+<section class="page" id="faq">
+  <h2 class="t">Questions we get a lot</h2>
+  <p class="sub">&nbsp;</p>
+  <div id="faqList"></div>
+</section>
+
+<section class="page" id="contact">
+  <h2 class="t">Contact us</h2>
+  <p class="sub">Talk to a real person who knows the destinations.</p>
+  <div class="two">
+    <div class="card"><div class="pad"><h3>Office</h3><p>Tidewander Journeys<br>Chennai, Tamil Nadu, India</p></div></div>
+    <div class="card"><div class="pad"><h3>Phone and email</h3><p>+91 90000 12345<br>hello@tidewander.example</p></div></div>
+    <div class="card"><div class="pad"><h3>Hours</h3><p>Mon to Sat: 9:00 AM to 6:00 PM<br>Sun: 10:00 AM to 2:00 PM</p></div></div>
+    <div class="card"><div class="pad"><h3>Social</h3><p>Instagram, Facebook, X, YouTube</p></div></div>
+  </div>
+</section>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="box" id="box"></div></div>
+
+<footer>
+  <div class="cols">
+    <div><h3>Tidewander Journeys</h3><p>Trips planned with care, from first idea to safe return.</p></div>
+    <div><h3>Explore</h3><a href="#places">Destinations</a><a href="#packages">Packages</a><a href="#gallery">Gallery</a></div>
+    <div><h3>Help</h3><a href="#book">Book a trip</a><a href="#faq">FAQ</a><a href="#guide">Travel guide</a><a href="#contact">Contact</a></div>
+  </div>
+  <p>&copy; 2026 Tidewander Journeys. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
