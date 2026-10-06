@@ -5,70 +5,68 @@
 }
 
 :root {
-  --color-red: #e63946;
-  --color-peach: #f4a261;
-  --color-teal: #2a9d8f;
-  --color-dark: #1a1a1a;
-  --color-light: #fef8f3;
-  --color-gray: #6c757d;
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-muted: #a3a3a3;
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
   --spacing-lg: 32px;
-  --spacing-xl: 48px;
-  --radius: 12px;
-  --transition: all 0.3s ease;
+  --spacing-xl: 64px;
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 body {
   font-family: "Inter", sans-serif;
-  color: var(--color-dark);
-  background: var(--color-light);
-  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px; /* Wider container like Squarespace */
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
 
 /* Header */
 .site-header {
-  background: white;
-  border-bottom: 2px solid var(--color-peach);
+  background: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .site-header .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md) 0;
+  padding: 16px 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--color-dark);
+  gap: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .brand-mark {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, var(--color-red), var(--color-peach));
-  color: white;
-  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 2px;
   font-weight: 800;
+  font-size: 14px;
 }
 
 .nav-links {
@@ -79,97 +77,90 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--color-dark);
+  color: #ffffff;
   font-weight: 500;
-  transition: var(--transition);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: opacity 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--color-red);
+  opacity: 0.6;
 }
 
 /* Buttons */
 .button {
-  padding: 10px 20px;
-  border-radius: var(--radius);
+  padding: 14px 28px;
+  border-radius: 2px; /* Sharp corners like the image */
   text-decoration: none;
   font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   border: none;
   cursor: pointer;
   transition: var(--transition);
   display: inline-block;
-  font-size: 14px;
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--color-red), var(--color-peach));
-  color: white;
-  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+  background: #ffffff;
+  color: #000000;
 }
 
 .button-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
-}
-
-.button-secondary {
-  background: white;
-  color: var(--color-red);
-  border: 2px solid var(--color-red);
-}
-
-.button-secondary:hover {
-  background: var(--color-red);
-  color: white;
+  background: #e5e5e5;
+  transform: scale(0.98);
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--color-red) 0%, var(--color-peach) 100%);
-  color: white;
-  padding: var(--spacing-xl) 0;
+  /* Moody dark abstract background to mimic the reference image */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), 
+              url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  min-height: 85vh; /* Very tall hero */
+  display: flex;
+  align-items: center;
+  padding-bottom: 15vh; /* Make room for overlapping cards */
 }
 
 .hero-content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-lg);
   text-align: center;
 }
 
 .hero-copy h1 {
   font-size: 48px;
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  letter-spacing: -1px;
+  font-weight: 300;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.5px;
 }
 
 .hero-copy .subtitle {
-  font-size: 18px;
-  max-width: 600px;
-  opacity: 0.95;
-  margin-bottom: var(--spacing-md);
-}
-
-.hero-actions {
-  display: flex;
-  gap: var(--spacing-md);
-  justify-content: center;
-  flex-wrap: wrap;
+  font-size: 16px;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 400;
 }
 
 /* Sections */
 .section {
   padding: var(--spacing-xl) 0;
-}
-
-.section-alt {
-  background: white;
+  background: #000000;
 }
 
 .section-gallery {
-  background: var(--color-light);
+  /* Pull the gallery up so cards overlap the hero image */
+  margin-top: -20vh; 
+  position: relative;
+  z-index: 10;
+  padding-top: 0;
 }
 
 .section-heading {
@@ -178,140 +169,139 @@ body {
 }
 
 .section-heading h2 {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--color-dark);
-  margin-bottom: var(--spacing-sm);
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 .section-heading p {
-  font-size: 16px;
-  color: var(--color-gray);
-}
-
-.section-text {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 16px;
-  color: var(--color-gray);
-  line-height: 1.8;
+  font-size: 14px;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 8px;
 }
 
 /* Team Container */
 .team-container {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
-}
-
-.team-section {
-  margin-bottom: var(--spacing-xl);
+  gap: 100px; /* Big gaps between team members */
 }
 
 .team-name {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--color-red);
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
   margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-md);
-  border-bottom: 3px solid var(--color-peach);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: var(--spacing-sm);
 }
 
 /* Project Grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  align-items: start;
 }
 
+/* Card Design (Like Squarespace Templates) */
 .project-card {
-  background: white;
-  border-radius: var(--radius);
+  background: #111111;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-  border: 2px solid transparent;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Heavy shadow to separate from background */
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-color: var(--color-peach);
+  transform: translateY(-10px);
 }
 
 .project-preview {
-  height: 200px;
-  background: linear-gradient(135deg, var(--color-peach) 0%, var(--color-teal) 100%);
+  height: 400px; /* Very tall preview like the templates */
+  background: #f4eade; /* A warm, high-end neutral background */
   position: relative;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.project-preview::after {
-  content: "→";
-  font-size: 48px;
-  color: rgba(255, 255, 255, 0.3);
-  font-weight: 300;
+/* Give each team member's cards a slightly different placeholder vibe */
+.team-section:nth-child(even) .project-preview {
+  background: #e2e8f0; 
+}
+.team-section:nth-child(3n) .project-preview {
+  background: #27272a; 
 }
 
 .project-content {
   padding: var(--spacing-md);
+  background: #ffffff; /* White card bottom */
+  color: #000000;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
 .project-tag {
-  display: inline-block;
-  background: var(--color-red);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666666;
+  margin-bottom: 8px;
 }
 
 .project-content h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-dark);
-  margin-bottom: var(--spacing-sm);
+  font-size: 28px;
+  font-weight: 400;
+  /* Use a serif font for the title to mimic the "BOTANICA" aesthetic */
+  font-family: "Georgia", serif; 
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
 }
 
 .project-content p {
   font-size: 14px;
-  color: var(--color-gray);
+  color: #444444;
   margin-bottom: var(--spacing-md);
   flex-grow: 1;
 }
 
 .project-link {
   display: inline-block;
-  color: var(--color-red);
+  color: #000000;
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+  width: fit-content;
   transition: var(--transition);
 }
 
 .project-link:hover {
-  color: var(--color-teal);
+  opacity: 0.5;
 }
 
 /* Footer */
 .site-footer {
-  background: var(--color-dark);
-  color: white;
-  padding: var(--spacing-lg) 0;
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-xl) 0;
   text-align: center;
-  margin-top: var(--spacing-xl);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .footer-content {
@@ -320,47 +310,23 @@ body {
   align-items: center;
   gap: var(--spacing-lg);
   flex-wrap: wrap;
+  color: var(--color-muted);
 }
 
 .footer-content a {
-  color: var(--color-peach);
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 600;
-  transition: var(--transition);
+  transition: opacity 0.3s ease;
 }
 
 .footer-content a:hover {
-  color: var(--color-red);
+  opacity: 0.6;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-copy h1 {
-    font-size: 32px;
-  }
-
-  .hero-copy .subtitle {
-    font-size: 16px;
-  }
-
-  .section-heading h2 {
-    font-size: 28px;
-  }
-
-  .team-name {
-    font-size: 24px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .site-header .nav {
-    flex-direction: column;
-    gap: var(--spacing-md);
-  }
+  .hero-copy h1 { font-size: 32px; }
+  .section-gallery { margin-top: -10vh; } /* Less overlap on mobile */
+  .nav-links { display: none; } /* Hides links to mimic a cleaner mobile bar */
+  .project-preview { height: 300px; }
 }
