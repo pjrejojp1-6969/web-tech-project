@@ -5,9 +5,8 @@
 }
 
 :root {
-  --color-bg: #000000;
   --color-text: #ffffff;
-  --color-muted: #a3a3a3;
+  --color-muted: #d4d4d4;
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
@@ -19,20 +18,24 @@
 body {
   font-family: "Inter", sans-serif;
   color: var(--color-text);
-  background: var(--color-bg);
+  /* The new global background image replacing the black */
+  background: url('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=2560&auto=format&fit=crop') no-repeat center center fixed;
+  background-size: cover;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 1400px; /* Wider container like Squarespace */
+  max-width: 1400px; 
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
 
 /* Header */
 .site-header {
-  background: #000000;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
@@ -92,7 +95,7 @@ body {
 /* Buttons */
 .button {
   padding: 14px 28px;
-  border-radius: 2px; /* Sharp corners like the image */
+  border-radius: 2px;
   text-decoration: none;
   font-weight: 600;
   font-size: 12px;
@@ -116,15 +119,12 @@ body {
 
 /* Hero Section */
 .hero {
-  /* Moody dark abstract background to mimic the reference image */
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), 
-              url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  min-height: 85vh; /* Very tall hero */
+  /* Semi-transparent overlay to let the global background shine through */
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  padding-bottom: 15vh; /* Make room for overlapping cards */
+  padding-bottom: 15vh;
 }
 
 .hero-content {
@@ -140,11 +140,12 @@ body {
   font-weight: 300;
   margin-bottom: var(--spacing-sm);
   letter-spacing: -0.5px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 .hero-copy .subtitle {
   font-size: 16px;
-  color: var(--color-text);
+  color: var(--color-muted);
   margin-bottom: var(--spacing-lg);
   font-weight: 400;
 }
@@ -152,15 +153,18 @@ body {
 /* Sections */
 .section {
   padding: var(--spacing-xl) 0;
-  background: #000000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .section-gallery {
-  /* Pull the gallery up so cards overlap the hero image */
   margin-top: -20vh; 
   position: relative;
   z-index: 10;
   padding-top: 0;
+  background: transparent; /* Removes background to float over the hero */
+  backdrop-filter: none;
 }
 
 .section-heading {
@@ -172,6 +176,7 @@ body {
   font-size: 32px;
   font-weight: 300;
   letter-spacing: 1px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .section-heading p {
@@ -186,7 +191,7 @@ body {
 .team-container {
   display: flex;
   flex-direction: column;
-  gap: 100px; /* Big gaps between team members */
+  gap: 100px;
 }
 
 .team-name {
@@ -197,7 +202,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: var(--spacing-sm);
 }
 
@@ -209,41 +214,32 @@ body {
   align-items: start;
 }
 
-/* Card Design (Like Squarespace Templates) */
+/* Card Design */
 .project-card {
-  background: #111111;
+  background: #ffffff; /* White card bottom */
   border-radius: 4px;
   overflow: hidden;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Heavy shadow to separate from background */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 .project-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
 }
 
 .project-preview {
-  height: 400px; /* Very tall preview like the templates */
-  background: #f4eade; /* A warm, high-end neutral background */
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Give each team member's cards a slightly different placeholder vibe */
-.team-section:nth-child(even) .project-preview {
-  background: #e2e8f0; 
-}
-.team-section:nth-child(3n) .project-preview {
-  background: #27272a; 
+  height: 350px; 
+  background-color: #111;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .project-content {
   padding: var(--spacing-md);
-  background: #ffffff; /* White card bottom */
   color: #000000;
   flex-grow: 1;
   display: flex;
@@ -262,7 +258,6 @@ body {
 .project-content h3 {
   font-size: 28px;
   font-weight: 400;
-  /* Use a serif font for the title to mimic the "BOTANICA" aesthetic */
   font-family: "Georgia", serif; 
   margin-bottom: 12px;
   letter-spacing: -0.5px;
@@ -295,7 +290,9 @@ body {
 
 /* Footer */
 .site-footer {
-  background: #000000;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: var(--spacing-xl) 0;
   text-align: center;
@@ -326,7 +323,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .hero-copy h1 { font-size: 32px; }
-  .section-gallery { margin-top: -10vh; } /* Less overlap on mobile */
-  .nav-links { display: none; } /* Hides links to mimic a cleaner mobile bar */
-  .project-preview { height: 300px; }
+  .section-gallery { margin-top: -10vh; } 
+  .nav-links { display: none; } 
+  .project-preview { height: 250px; }
 }
