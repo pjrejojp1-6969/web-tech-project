@@ -77,6 +77,12 @@ const teamData = [
         type: "Travel",
         path: "team/captain/traveling/index.html",
         description: "A travel destination and tour booking platform."
+      },
+      {
+        title: "Crypto Dashboard",
+        type: "Finance / Web3",
+        path: "team/captain/crypto/index.html",
+        description: "A cryptocurrency tracking and information dashboard."
       }
     ]
   },
