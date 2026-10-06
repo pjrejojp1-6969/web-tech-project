@@ -53,7 +53,7 @@ body {
   align-items: center;
   gap: 12px;
   font-weight: 600;
-  font-size: 20px; /* Made Brand text slightly bigger */
+  font-size: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -119,18 +119,18 @@ body {
 
 /* Hero Section */
 .hero {
-  /* Added a distinct image and dark overlay just for the top portion */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2560&auto=format&fit=crop');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=2048x2048&w=is&k=20&c=Xa_wH_pZFMWNX8EPtufv9KSvS1OzUPus7C0Br2ZIMDg=');
   background-size: cover;
   background-position: center;
   min-height: 85vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   padding-bottom: 15vh;
-  
-  /* Adds a smooth fade into the gallery section below */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
 }
+
 /* Sections */
 .section {
   padding: var(--spacing-xl) 0;
@@ -176,9 +176,9 @@ body {
 }
 
 .team-name {
-  font-size: 32px; /* Made Team Member Names huge and highly visible */
+  font-size: 32px;
   font-weight: 600;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: var(--spacing-lg);
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -190,7 +190,7 @@ body {
 /* Project Grid: Forced 4 columns */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Forces exactly 4 in one row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   align-items: stretch;
 }
@@ -212,7 +212,7 @@ body {
 }
 
 .project-preview {
-  height: 250px; /* Reduced slightly to fit all 4 comfortably */
+  height: 250px;
   background-color: #111;
   background-size: cover;
   background-position: center;
@@ -237,7 +237,7 @@ body {
 }
 
 .project-content h3 {
-  font-size: 24px; /* Scaled down slightly to fit 4 across cleanly */
+  font-size: 24px;
   font-weight: 400;
   font-family: "Georgia", serif; 
   margin-bottom: 12px;
@@ -301,10 +301,10 @@ body {
   opacity: 0.6;
 }
 
-/* Responsive constraints so it doesn't break on small laptops/tablets */
+/* Responsive constraints */
 @media (max-width: 1200px) {
   .project-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2x2 on tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -312,5 +312,5 @@ body {
   .hero-copy h1 { font-size: 48px; }
   .section-gallery { margin-top: -10vh; } 
   .nav-links { display: none; } 
-  .project-grid { grid-template-columns: 1fr; } /* Stack vertically on phones */
+  .project-grid { grid-template-columns: 1fr; }
 }
