@@ -1,141 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Tech Projects</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Technology Projects - Team Collection</title>
+  <meta name="description" content="A modern UI project showcase collection from our team." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Navigation Header -->
   <header class="site-header">
     <div class="container nav">
       <div class="brand">
         <span class="brand-mark">W</span>
-        WEB TECH PROJECTS
+        <span>Web Tech Projects</span>
       </div>
-      <div class="nav-links">
-        <a href="#">Gallery</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#" class="button button-primary">Explore</a>
-      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="button button-primary" href="#gallery">Explore</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-copy">
-      <h1 style="font-size: 56px; font-weight: 500; margin-bottom: 16px;">Web Technology Projects</h1>
-      <p style="font-size: 16px; margin-bottom: 32px; color: #e5e5e5;">A curated collection of modern web design projects from our talented team of developers, showcasing innovative UI/UX design and interactive features.</p>
-      <button class="button button-primary">Browse Projects</button>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section class="section section-gallery container">
-    <div class="section-heading">
-      <h2 style="color: #000000; text-shadow: none;">Project Gallery</h2>
-      <p>Explore all projects by team members</p>
-    </div>
-
-    <div class="team-container">
-      
-      <!-- TEAM MEMBER: REJO (White Text) -->
-      <div class="team-section">
-        <div class="team-name rejo">REJO</div>
-        <div class="project-grid">
-          
-          <!-- REJO PROJECT 1 -->
-          <div class="project-card">
-            <!-- Add your image URL inside the url('') below -->
-            <div class="project-preview" style="background-image: url('YOUR_IMAGE_LINK_HERE');"></div>
-            <div class="project-content">
-              <span class="project-tag">Category</span>
-              <h3>Project Title</h3>
-              <p>Project description goes here.</p>
-              <a href="#" class="project-link">View Project</a>
-            </div>
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <h1>Web Technology Projects</h1>
+          <p class="subtitle">
+            A curated collection of modern web design projects from our talented team of developers, showcasing innovative UI/UX design and interactive features.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#gallery">Browse Projects</a>
           </div>
-          <!-- Copy/paste the card above 3 more times for Rejo's other projects -->
-
         </div>
       </div>
+    </section>
 
-      <!-- TEAM MEMBER: JASWANTH (Black Text) -->
-      <div class="team-section">
-        <div class="team-name">JASWANTH</div>
-        <div class="project-grid">
-          
-          <!-- JASWANTH PROJECT 1 -->
-          <div class="project-card">
-            <div class="project-preview" style="background-image: url('YOUR_IMAGE_LINK_HERE');"></div>
-            <div class="project-content">
-              <span class="project-tag">Category</span>
-              <h3>Project Title</h3>
-              <p>Project description goes here.</p>
-              <a href="#" class="project-link">View Project</a>
-            </div>
-          </div>
-          <!-- Add more cards here -->
-
+    <section id="gallery" class="section section-gallery">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Project Gallery</h2>
+          <p>Explore all projects by team members</p>
         </div>
+        <div id="team-container" class="team-container" aria-live="polite"></div>
       </div>
+    </section>
 
-      <!-- TEAM MEMBER: VENKATA SAI CHARAN (Black Text) -->
-      <div class="team-section">
-        <div class="team-name">VENKATA SAI CHARAN</div>
-        <div class="project-grid">
-          
-          <!-- VENKATA SAI CHARAN PROJECT 1 -->
-          <div class="project-card">
-            <div class="project-preview" style="background-image: url('YOUR_IMAGE_LINK_HERE');"></div>
-            <div class="project-content">
-              <span class="project-tag">Category</span>
-              <h3>Project Title</h3>
-              <p>Project description goes here.</p>
-              <a href="#" class="project-link">View Project</a>
-            </div>
-          </div>
-          <!-- Add more cards here -->
-
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About This Collection</h2>
         </div>
+        <p class="section-text">
+          These projects showcase modern UI/UX design, interactive features, and responsive layouts. Each project is built with HTML, CSS, and JavaScript for a clean, functional experience. Our team collaborates to bring creative ideas to life.
+        </p>
       </div>
+    </section>
+  </main>
 
-      <!-- TEAM MEMBER: SAICHARAN (Black Text) -->
-      <div class="team-section">
-        <div class="team-name">SAICHARAN</div>
-        <div class="project-grid">
-          
-          <!-- SAICHARAN PROJECT 1 -->
-          <div class="project-card">
-            <div class="project-preview" style="background-image: url('YOUR_IMAGE_LINK_HERE');"></div>
-            <div class="project-content">
-              <span class="project-tag">Category</span>
-              <h3>Project Title</h3>
-              <p>Project description goes here.</p>
-              <a href="#" class="project-link">View Project</a>
-            </div>
-          </div>
-          <!-- Add more cards here -->
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-content">
-      <span>&copy; 2026 Web Tech Projects</span>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Contact Us</a>
+      <p>© <span id="year"></span> Web Technology Projects</p>
+      <a href="https://github.com/pjrejojp1-6969/web-tech-project" target="_blank" rel="noreferrer">
+        View on GitHub
+      </a>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
